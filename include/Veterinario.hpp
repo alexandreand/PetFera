@@ -1,4 +1,7 @@
-#include "Funcionario.cpp"
+#include "Funcionario.hpp"
+#include <string>
+
+using namespace std;
 
 class Veterinario : public Funcionario{
 	string m_crmv;

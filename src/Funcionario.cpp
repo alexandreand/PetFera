@@ -1,7 +1,4 @@
 #include "../include/Funcionario.hpp"
-#include <string>
-
-using namespace std;
 
 Funcionario::Funcionario(){
 	this->m_id = 0;

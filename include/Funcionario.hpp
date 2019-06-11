@@ -1,5 +1,7 @@
 #include <string>
 
+using namespace std;
+
 class Funcionario{
 	protected:
 		int m_id;

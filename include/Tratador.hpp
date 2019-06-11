@@ -1,4 +1,7 @@
-#include "Funcionario.cpp"
+#include "Funcionario.hpp"
+#include <string>
+
+using namespace std;
 
 class Tratador : public Funcionario{
 	string m_nivel_seguranca;
