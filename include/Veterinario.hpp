@@ -7,6 +7,7 @@ class Veterinario : public Funcionario{
 	string m_crmv;
 public:
 	Veterinario();
+	Veterinario(string crmv);
 	~Veterinario();
 	//gets e sets
 	void setM_crmv(string value);
