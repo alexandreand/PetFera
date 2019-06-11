@@ -4,8 +4,7 @@
 
 using namespace std;
 
-class Animal
-{
+class Animal{
 	private:
 		int id;
 		string classe;
@@ -20,7 +19,7 @@ class Animal
 	public:
 		Animal();
 		Animal(string classe, string nome_cientifico);
-		~Aninal();
+		~Animal();
 
 		void setClasse(string classe);
 		string getClasse();
@@ -42,4 +41,4 @@ class Animal
 
 		void setNomeBatismo(string nome);
 		string getNomeBatismo();
-}
+};

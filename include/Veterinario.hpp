@@ -1,4 +1,8 @@
+#ifndef FUNCIONARIO_HPP
+#define FUNCIONARIO_HPP
 #include "Funcionario.hpp"
+#endif
+
 #include <string>
 
 using namespace std;
