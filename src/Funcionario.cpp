@@ -1,13 +1,15 @@
 #include "../include/Funcionario.hpp"
 #include <string>
 
+using namespace std;
+
 Funcionario::Funcionario(){
 	this->m_id = 0;
 	this->m_nome = "";
 	this->m_cpf = "";
 	this->m_idade = 0;
 	this->m_tipo_sanguineo = 0;
-	this->m_fator_rh = '';
+	this->m_fator_rh = (char) 0;
 	this->m_especialidade = "";
 }
 
@@ -63,7 +65,7 @@ short Funcionario::getM_idade(){
 	return this->m_idade;
 }
 
-void setM_tipo_sanguineo(short value){
+void Funcionario::setM_tipo_sanguineo(short value){
 	this->m_tipo_sanguineo = value;
 }
 
