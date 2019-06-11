@@ -1,79 +1,40 @@
-#include "../src/Funcionario.cpp"
+#include <string>
 
-Funcionario::Funcionario(){
-	this->m_id = 0;
-	this->m_nome = "";
-	this->m_cpf = "";
-	this->m_idade = 0;
-	this->m_tipo_sanguineo = 0;
-	this->m_fator_rh = '';
-	this->m_especialidade = "";
-}
-
-Funcionario::Funcionario(int id, string nome, string cpf,
+class Funcionario{
+	protected:
+		int m_id;
+		string m_nome;
+		string m_cpf;
+		string m_especialidade;
+		short m_idade;
+		short m_tipo_sanguineo;
+		char m_fator_rh;
+					
+	public:
+		Funcionario(int id, string nome, string cpf,
 					short idade, short tipo_sanguineo,
-					char fator_rh, string especialidade){
-	this->m_id = id;
-	this->m_nome = nome;
-	this->m_cpf = cpf;
-	this->m_idade = idade;
-	this->m_tipo_sanguineo = tipo_sanguineo;
-	this->m_fator_rh = fator_rh;
-	this->m_especialidade = especialidade;
-}
+					char fator_rh, string especialidade);
+		Funcionario();
+		~Funcionario();
+		//gets e sets
+		void setM_id(int value);
+		int getM_id();
 
-void Funcionario::setM_id(int value){
-	this->m_id = value;
-}
+		void setM_nome(string value);
+		string getM_nome();
 
-int Funcionario::getM_id(){
-	return this->m_id;
-}
+		void setM_cpf(string value);
+		string getM_cpf();
 
-void Funcionario::setM_nome(string value){
-	this->m_nome = value;
-}
+		void setM_especialidade(string value);
+		string getM_especialidade();
 
-string Funcionario::getM_nome(){
-	return this->m_nome;
-}
+		void setM_idade(short value);
+		short getM_idade();
 
-void Funcionario::setM_cpf(string value){
-	this->m_cpf = value;
-}
+		void setM_tipo_sanguineo(short value);
+		short getM_tipo_sanguineo();
 
-string Funcionario::getM_cpf(){
-	return this->m_cpf;
-}
-
-void Funcionario::setM_especialidade(string value){
-	this->m_especialidade = value;
-}
-
-string Funcionario::getM_especialidade(){
-	return this->m_especialidade;
-}
-
-void Funcionario::setM_idade(short value){
-	this->m_idade = value;
-}
-
-short Funcionario::getM_idade(){
-	return this->m_idade;
-}
-
-void setM_tipo_sanguineo(short value){
-	this->m_tipo_sanguineo = value;
-}
-
-short Funcionario::getM_tipo_sanguineo(){
-	return this->m_tipo_sanguineo;
-}
-
-void Funcionario::setM_fator_rh(char value){
-	this->m_fator_rh = value;
-}
-
-char Funcionario::getM_fator_rh(){
-	return this->m_fator_rh;
-}
+		void setM_fator_rh(char value);
+		char getM_fator_rh();
+};
