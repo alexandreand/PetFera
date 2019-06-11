@@ -8,12 +8,13 @@
 using namespace std;
 
 class Veterinario : public Funcionario{
-	string m_crmv;
-public:
-	Veterinario();
-	Veterinario(string crmv);
-	~Veterinario();
-	//gets e sets
-	void setM_crmv(string value);
-	string getM_crmv();
+	private:
+		string m_crmv;
+	public:
+		Veterinario();
+		Veterinario(string crmv);
+		~Veterinario();
+		//gets e sets
+		void setM_crmv(string value);
+		string getM_crmv();
 };

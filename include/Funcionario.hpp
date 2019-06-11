@@ -3,7 +3,7 @@
 using namespace std;
 
 class Funcionario{
-	protected:
+	private:
 		int m_id;
 		string m_nome;
 		string m_cpf;
