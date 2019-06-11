@@ -1,4 +1,4 @@
-#include "src/Animal.hpp"
+#include "../include/Animal.hpp"
 
 void Animal::setClasse(string classe)
 {
