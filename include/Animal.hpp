@@ -1,7 +1,8 @@
 #include <string>
-#include "include/Veterinario.hpp"
-#include "include/Tratador.hpp"
+#include "Veterinario.hpp"
+#include "Tratador.hpp"
 
+using namespace std;
 
 class Animal
 {
