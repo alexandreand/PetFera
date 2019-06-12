@@ -2,57 +2,57 @@
 
 void Animal::setClasse(string classe)
 {
-	this->classe = classe;
+	this->m_classe = classe;
 }
 string Animal::getClasse()
 {
-	return this->classe;
+	return this->m_classe;
 }
 void Animal::setNomeCientifico(string nome)
 {
-	this->nome_cientifico = nome;
+	this->m_nome_cientifico = nome;
 }
 string Animal::getNomeCientifico()
 {
-	return this->nome_cientifico;
+	return this->m_nome_cientifico;
 }
 void Animal::setSexo(char sexo)
 {
-	this->sexo = sexo;
+	this->m_sexo = sexo;
 }
 char Animal::getSexo()
 {
-	return this->sexo;
+	return this->m_sexo;
 }
 void Animal::setDieta(string dieta)
 {
-	this->dieta = dieta;
+	this->m_dieta = dieta;
 }
 string Animal::getDieta()
 {
-	return this->dieta;
+	return this->m_dieta;
 }
 void Animal::setVeterinario(Veterinario v)
 {
-	this->veterinario = v;
+	this->m_veterinario = v;
 }
 Veterinario Animal::getVeterinario()
 {
-	return this->veterinario;
+	return this->m_veterinario;
 }
 void Animal::setTratador(Tratador t)
 {
-	this->tratador = t;
+	this->m_tratador = t;
 }
 Tratador Animal::getTratador()
 {
-	return this->tratador;
+	return this->m_tratador;
 }
 void Animal::setNomeBatismo(string nome)
 {
-	this->nome_batismo = nome;
+	this->m_nome_batismo = nome;
 }
 string Animal::getNomeBatismo()
 {
-	return this->nome_batismo;
+	return this->m_nome_batismo;
 }
