@@ -1,8 +1,9 @@
 #include<time.h>
+#include "Animal.hpp"
 
 using namespace std;
 
-class Anfibio{
+class Anfibio : public Animal{
 	private:
 		int m_total_mudas;
 		time_t m_ultima_muda;

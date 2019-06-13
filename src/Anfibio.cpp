@@ -21,7 +21,7 @@ void Anfibio::setM_ultima_muda(time_t value)
 {
 
 }
-time_t getM_ultima_muda()
+time_t Anfibio::getM_ultima_muda()
 {
-	return this->m_ultima_muda
+	return this->m_ultima_muda;
 }

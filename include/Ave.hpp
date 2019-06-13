@@ -1,8 +1,9 @@
 #include <string>
+#include "Animal.hpp"
 
 using namespace std;
 
-class Ave{
+class Ave : public Animal{
 	private:
 		string m_cor_pelo;
 	public:
