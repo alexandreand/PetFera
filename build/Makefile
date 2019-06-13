@@ -38,6 +38,8 @@ mamiferonativo.o: ../include/MamiferoNativo.hpp ../src/MamiferoNativo.cpp
 
 reptilnativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
 	$(CC) ../src/ReptilNativo.cpp -c
-	
+
 clear:
 	rm *.o
+
+
