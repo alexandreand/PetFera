@@ -1,4 +1,7 @@
-class Reptil{
+#include "Animal.hpp"
+
+
+class Reptil : public Animal{
 	private:
 		bool m_venenoso;
 		string m_tipo_veneno;

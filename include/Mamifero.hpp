@@ -1,4 +1,7 @@
-class Mamifero{
+#include "Animal.hpp"
+
+
+class Mamifero : public Animal{
 	private:
 		double m_tam_bico;
 		double m_env_asas;
