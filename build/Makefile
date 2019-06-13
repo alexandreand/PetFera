@@ -1,5 +1,5 @@
 CC=g++
-obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o
+obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o
 
 all: $(obj)
 
@@ -27,5 +27,17 @@ mamifero.o: ../include/Mamifero.hpp ../src/Mamifero.cpp
 reptil.o: ../include/Reptil.hpp ../src/Reptil.cpp
 	$(CC) ../src/Reptil.cpp -c
 
+anfibionativo.o: ../include/AnfibioNativo.hpp ../src/AnfibioNativo.cpp
+	$(CC) ../src/AnfibioNativo.cpp -c
+
+avenativo.o: ../include/AveNativo.hpp ../src/AveNativo.cpp
+	$(CC) ../src/AveNativo.cpp -c
+
+mamiferonativo.o: ../include/MamiferoNativo.hpp ../src/MamiferoNativo.cpp
+	$(CC) ../src/MamiferoNativo.cpp -c
+
+reptilnativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
+	$(CC) ../src/ReptilNativo.cpp -c
+	
 clear:
 	rm *.o
