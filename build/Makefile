@@ -1,5 +1,5 @@
 CC=g++
-obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o
+obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o anfibioexotico.o mamiferoexotico.o aveexotico.o
 
 all: $(obj)
 
@@ -30,14 +30,26 @@ reptil.o: ../include/Reptil.hpp ../src/Reptil.cpp
 anfibionativo.o: ../include/AnfibioNativo.hpp ../src/AnfibioNativo.cpp
 	$(CC) ../src/AnfibioNativo.cpp -c
 
+anfibioexotico.o: ../include/AnfibioExotico.hpp ../src/AnfibioExotico.cpp
+	$(CC) ../src/AnfibioExotico.cpp -c
+
 avenativo.o: ../include/AveNativo.hpp ../src/AveNativo.cpp
 	$(CC) ../src/AveNativo.cpp -c
+
+aveexotico.o: ../include/AveExotico.hpp ../src/AveExotico.cpp
+	$(CC) ../src/AveExotico.cpp -c
 
 mamiferonativo.o: ../include/MamiferoNativo.hpp ../src/MamiferoNativo.cpp
 	$(CC) ../src/MamiferoNativo.cpp -c
 
+mamiferoexotico.o: ../include/MamiferoExotico.hpp ../src/MamiferoExotico.cpp
+	$(CC) ../src/MamiferoExotico.cpp -c
+
 reptilnativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
 	$(CC) ../src/ReptilNativo.cpp -c
+
+reptilexotico.o: ../include/ReptilExotico.hpp ../src/ReptilExotico.cpp
+	$(CC) ../src/ReptilExotico.cpp -c
 
 clear:
 	rm *.o
