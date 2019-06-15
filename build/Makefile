@@ -1,5 +1,5 @@
 CC=g++
-obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o anfibioexotico.o mamiferoexotico.o aveexotico.o
+obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o anfibioexotico.o mamiferoexotico.o aveexotico.o controlador.o menu.o
 
 all: $(obj)
 
@@ -50,6 +50,12 @@ reptilnativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
 
 reptilexotico.o: ../include/ReptilExotico.hpp ../src/ReptilExotico.cpp
 	$(CC) ../src/ReptilExotico.cpp -c
+
+controlador.o: ../src/Controlador.cpp
+	$(CC) ../src/Controlador.cpp -c
+
+menu.o: ../src/Menu.cpp
+	$(CC) ../src/Menu.cpp -c
 
 clear:
 	rm *.o
