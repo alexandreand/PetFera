@@ -5,11 +5,12 @@ Ultimo trabalho da disciplina de LPI da UFRN, feito em c++ junto com o banco MyS
 Autores:
   Alexandre e Luan
 
-##Dependêcias
+## Dependêcias
 
 Instalar MySQL no Ubuntu;
+```
 	$ sudo apt-get install mysql-server mysql-client
-
+```
 Para reiniciar o MySQL;
 	$ sudo service mysql restart
   
