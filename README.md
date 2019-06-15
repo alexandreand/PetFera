@@ -19,7 +19,7 @@ Iniciar o MySQL com cliente admin;
 ```
 	$ mysql --user=root -p
 ```
-	(Após o Enter será necessário a senha escolhida durante a instalação)
+(Após o Enter será necessário a senha escolhida durante a instalação)
   
 Para instalar a biblioteca mysql, necessária para manipulação no C++:
 ```
