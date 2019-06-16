@@ -25,3 +25,9 @@ Para instalar a biblioteca mysql, necessária para manipulação no C++:
 ```
 	$ sudo apt-get install libmysql++-dev
 ```
+## O Código
+Para compilar:
+```
+	$ cd build/
+	$ make all
+```
