@@ -31,3 +31,7 @@ Para compilar:
 	$ cd build/
 	$ make all
 ```
+Execultando:
+```
+	$ ./main
+```
