@@ -61,5 +61,6 @@ Menu.o: ../src/Menu.cpp
 
 clear:
 	rm *.o
+	rm main
 
 

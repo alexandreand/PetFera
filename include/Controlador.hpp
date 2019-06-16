@@ -17,4 +17,9 @@
 #include "../include/Tratador.hpp"
 #include "../include/Veterinario.hpp"
 */
-int controlar();
+
+#include <iostream>
+
+using namespace std;
+
+void controlar();

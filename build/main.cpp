@@ -2,6 +2,6 @@
 
 int main()
 {
-	//int res = controlar();
+	controlar();
 	return 0;
 }
