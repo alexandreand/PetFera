@@ -1,7 +1,11 @@
-#include<time.h>
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include "Animal.hpp"
 
-using namespace std;
+#endif
+
+#include<time.h>
 
 class Anfibio : public Animal{
 	private:

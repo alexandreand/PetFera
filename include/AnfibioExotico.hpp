@@ -1,5 +1,13 @@
+#ifndef ANFIBIO_HPP
+#define ANFIBIO_HPP
+
 #include "Anfibio.hpp"
+
+#endif
+
 #include <string>
+
+using namespace std;
 
 class AnfibioExotico : public Anfibio
 {

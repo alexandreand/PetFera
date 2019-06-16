@@ -1,4 +1,10 @@
+#ifndef REPTIL_HPP
+#define REPTIL_HPP
+
 #include "Reptil.hpp"
+
+#endif
+
 #include <string>
 
 using namespace std;

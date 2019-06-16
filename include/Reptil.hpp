@@ -1,5 +1,9 @@
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include "Animal.hpp"
 
+#endif
 
 class Reptil : public Animal{
 	private:

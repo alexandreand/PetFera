@@ -1,6 +1,12 @@
-#include <string>
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include "Animal.hpp"
 
+#endif
+
+
+#include <string>
 using namespace std;
 
 class Ave : public Animal{

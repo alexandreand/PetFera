@@ -1,4 +1,9 @@
+#ifndef MAMIFERO_HPP
+#define MAMIFERO_HPP
+
 #include "Mamifero.hpp"
+
+#endif
 
 class MamiferoExotico : public Mamifero
 {

@@ -1,60 +1,62 @@
 CC=g++
-obj = animal.o funcionario.o tratador.o veterinario.o anfibio.o ave.o mamifero.o reptil.o anfibionativo.o avenativo.o mamiferonativo.o reptilnativo.o anfibioexotico.o mamiferoexotico.o aveexotico.o controlador.o menu.o
+obj = Animal.o Funcionario.o Tratador.o Veterinario.o Anfibio.o Ave.o Mamifero.o Reptil.o AnfibioNativo.o AveNativo.o MamiferoNativo.o ReptilNativo.o AnfibioExotico.o MamiferoExotico.o AveExotico.o Controlador.o Menu.o
+all: $(obj) main
 
-all: $(obj)
+main: main.cpp
+	$(CC) main.cpp $(obj) -o main
 
-animal.o: ../include/Animal.hpp ../src/Animal.cpp
+Animal.o: ../include/Animal.hpp ../src/Animal.cpp
 	$(CC) ../src/Animal.cpp -c
 
-funcionario.o: ../include/Funcionario.hpp ../src/Funcionario.cpp
+Funcionario.o: ../include/Funcionario.hpp ../src/Funcionario.cpp
 	$(CC) ../src/Funcionario.cpp -c
 
-tratador.o: ../include/Tratador.hpp ../src/Tratador.cpp
+Tratador.o: ../include/Tratador.hpp ../src/Tratador.cpp
 	$(CC) ../src/Tratador.cpp -c
 
-veterinario.o: ../include/Veterinario.hpp ../src/Veterinario.cpp
+Veterinario.o: ../include/Veterinario.hpp ../src/Veterinario.cpp
 	$(CC) ../src/Veterinario.cpp -c
 
-anfibio.o: ../include/Anfibio.hpp ../src/Anfibio.cpp
+Anfibio.o: ../include/Anfibio.hpp ../src/Anfibio.cpp
 	$(CC) ../src/Anfibio.cpp -c
 
-ave.o: ../include/Ave.hpp ../src/Ave.cpp
+Ave.o: ../include/Ave.hpp ../src/Ave.cpp
 	$(CC) ../src/Ave.cpp -c
 
-mamifero.o: ../include/Mamifero.hpp ../src/Mamifero.cpp
+Mamifero.o: ../include/Mamifero.hpp ../src/Mamifero.cpp
 	$(CC) ../src/Mamifero.cpp -c
 
-reptil.o: ../include/Reptil.hpp ../src/Reptil.cpp
+Reptil.o: ../include/Reptil.hpp ../src/Reptil.cpp
 	$(CC) ../src/Reptil.cpp -c
 
-anfibionativo.o: ../include/AnfibioNativo.hpp ../src/AnfibioNativo.cpp
+AnfibioNativo.o: ../include/AnfibioNativo.hpp ../src/AnfibioNativo.cpp
 	$(CC) ../src/AnfibioNativo.cpp -c
 
-anfibioexotico.o: ../include/AnfibioExotico.hpp ../src/AnfibioExotico.cpp
+AnfibioExotico.o: ../include/AnfibioExotico.hpp ../src/AnfibioExotico.cpp
 	$(CC) ../src/AnfibioExotico.cpp -c
 
-avenativo.o: ../include/AveNativo.hpp ../src/AveNativo.cpp
+AveNativo.o: ../include/AveNativo.hpp ../src/AveNativo.cpp
 	$(CC) ../src/AveNativo.cpp -c
 
-aveexotico.o: ../include/AveExotico.hpp ../src/AveExotico.cpp
+AveExotico.o: ../include/AveExotico.hpp ../src/AveExotico.cpp
 	$(CC) ../src/AveExotico.cpp -c
 
-mamiferonativo.o: ../include/MamiferoNativo.hpp ../src/MamiferoNativo.cpp
+MamiferoNativo.o: ../include/MamiferoNativo.hpp ../src/MamiferoNativo.cpp
 	$(CC) ../src/MamiferoNativo.cpp -c
 
-mamiferoexotico.o: ../include/MamiferoExotico.hpp ../src/MamiferoExotico.cpp
+MamiferoExotico.o: ../include/MamiferoExotico.hpp ../src/MamiferoExotico.cpp
 	$(CC) ../src/MamiferoExotico.cpp -c
 
-reptilnativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
+ReptilNativo.o: ../include/ReptilNativo.hpp ../src/ReptilNativo.cpp
 	$(CC) ../src/ReptilNativo.cpp -c
 
-reptilexotico.o: ../include/ReptilExotico.hpp ../src/ReptilExotico.cpp
+ReptilExotico.o: ../include/ReptilExotico.hpp ../src/ReptilExotico.cpp
 	$(CC) ../src/ReptilExotico.cpp -c
 
-controlador.o: ../src/Controlador.cpp
+Controlador.o: ../src/Controlador.cpp ../include/Controlador.hpp
 	$(CC) ../src/Controlador.cpp -c
 
-menu.o: ../src/Menu.cpp
+Menu.o: ../src/Menu.cpp
 	$(CC) ../src/Menu.cpp -c
 
 clear:

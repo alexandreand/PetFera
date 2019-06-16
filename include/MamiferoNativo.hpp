@@ -1,4 +1,11 @@
+#ifndef MAMIFERO_HPP
+#define MAMIFERO_HPP
+
 #include "Mamifero.hpp"
+
+#endif
+
+
 #include <string>
 
 using namespace std;

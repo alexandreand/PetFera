@@ -1,7 +1,7 @@
 #include "../include/Controlador.hpp"
 
-int controlar()
+int main()
 {
-
+	//int res = controlar();
 	return 0;
 }

@@ -22,6 +22,11 @@ Funcionario::Funcionario(int id, string nome, string cpf,
 	this->m_especialidade = especialidade;
 }
 
+Funcionario::~Funcionario()
+{
+	
+}
+
 void Funcionario::setM_id(int value){
 	this->m_id = value;
 }

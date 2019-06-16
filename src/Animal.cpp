@@ -1,5 +1,14 @@
 #include "../include/Animal.hpp"
 
+Animal::Animal()
+{
+
+}
+Animal::~Animal()
+{
+	
+}
+
 void Animal::setClasse(string classe)
 {
 	this->m_classe = classe;

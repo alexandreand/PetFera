@@ -1,4 +1,8 @@
+#ifndef AVE_HPP
+#define AVE_HPP
 #include "Ave.hpp"
+#endif
+
 #include <string>
 
 class AveExotico : public Ave
