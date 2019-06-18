@@ -1,7 +1,7 @@
-#include "../include/Controlador.hpp"
+#include "../include/Menu.hpp"
 
 int main()
 {
-	controlar();
+	int result = menu();
 	return 0;
 }

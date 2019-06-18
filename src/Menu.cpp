@@ -1,17 +1,16 @@
-//#include "Controlador.cpp"
+#include "../include/Menu.hpp"
 
-#include <iostream>
-
-using namespace std;
 int menu()
 {
 	int escolha = 0;
+
+	cout<<"1 - Cadastro\n2 - Remoção\n3 - Alteração\n4 - Consulta\n5 - Consulta de animais de um Vet ou Tra"<<endl<<": ";
 
 	cin>>escolha;
 	switch(escolha)
 	{
 		case 1://Cadastro ​ de um novo animal a ser comercializado
-
+			cadastro();
 			break;
 
 		case 2://Remoção ​ de um animal da lista após a sua comercialização;

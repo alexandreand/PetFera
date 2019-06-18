@@ -56,7 +56,7 @@ ReptilExotico.o: ../include/ReptilExotico.hpp ../src/ReptilExotico.cpp
 Controlador.o: ../src/Controlador.cpp ../include/Controlador.hpp
 	$(CC) ../src/Controlador.cpp -c
 
-Menu.o: ../src/Menu.cpp
+Menu.o: ../src/Menu.cpp ../include/Menu.hpp
 	$(CC) ../src/Menu.cpp -c
 
 clear:

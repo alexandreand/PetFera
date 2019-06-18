@@ -1,3 +1,6 @@
+#ifndef CONTROLADOR_HPP
+#define CONTROLADOR_HPP
+
 //#include "../include/Animal.hpp"
 //#include "../include/Ave.hpp"
 #include "../include/AveNativo.hpp"
@@ -23,3 +26,17 @@
 using namespace std;
 
 void controlar();
+
+void cadastro();
+
+int classeAnimal();
+
+int tipoAnimal(int num);
+
+int receberValores(int num);
+
+void identificador(int num);
+
+void cadastrar();
+
+#endif
