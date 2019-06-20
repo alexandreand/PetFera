@@ -6,7 +6,7 @@
 #endif
 
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 class AnfibioExotico : public Anfibio
@@ -24,4 +24,7 @@ public:
 
 	void setM_autorizacao_ibama(string value);
 	string getM_autorizacao_ibama();
+
+	//testando...
+	string mysql_insert(string nome_tabela);
 };

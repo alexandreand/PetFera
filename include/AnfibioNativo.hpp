@@ -27,4 +27,8 @@ class AnfibioNativo : public Anfibio
 
 		void setM_autorizacao_ibama(string value);
 		string getM_autorizacao_ibama();
+
+		//testando...
+
+		
 };

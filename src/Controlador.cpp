@@ -53,41 +53,12 @@ void receberValoresAnimal(T* animal)
 	//Tratador
 	animal->setM_nome_batismo("Garfield");
 
-	cout<<animal->getM_nome_batismo()<<endl;
+	//cout<<animal->getM_nome_batismo()<<endl;
 }
-
-
-template <typename T>
-void receberValoresAnfibio(T* anfibio)
-{
-	anfibio->setM_total_mudas(2);
-	//anfibio->setM_ultima_muda();
-}
-
-template <typename T>
-void receberValoresAve(T* ave)
-{
-	ave->setM_tam_bico(12.32);
-	ave->setM_env_asas(32.2);
-}
-
-template <typename T>
-void receberValoresMamifero(T* mamifero)
-{
-	mamifero->setM_cor_pelo("vermelha");
-}
-
-template <typename T>
-void receberValoresReptil(T* reptil)
-{
-	reptil->setM_venenoso(true);
-	reptil->setM_tipo_veneno("de morrer");
-}
-
 
 void identificador(int num)
 {
-	Animal* a = new Animal();
+	
 	switch(num)
 	{
 		case 6://AnfibioExotico
@@ -97,6 +68,7 @@ void identificador(int num)
 			receberValoresAnimal(anf_exo);
 			receberValoresAnfibio(anf_exo);
 			receberValoresExotico(anf_exo);
+			cout<<anf_exo->mysql_insert("teste")<<endl;
 			}
 			break;
 		case 7://AveExotico
@@ -165,15 +137,45 @@ void identificador(int num)
 	}
 }
 
+
+
+
+template <typename T>
+void receberValoresAnfibio(T* anfibio)
+{
+	anfibio->setM_total_mudas(2);
+	//anfibio->setM_ultima_muda();
+}
+
+template <typename T>
+void receberValoresAve(T* ave)
+{
+	ave->setM_tam_bico(12.32);
+	ave->setM_env_asas(32.2);
+}
+
+template <typename T>
+void receberValoresMamifero(T* mamifero)
+{
+	mamifero->setM_cor_pelo("vermelha");
+}
+
+template <typename T>
+void receberValoresReptil(T* reptil)
+{
+	reptil->setM_venenoso(true);
+	reptil->setM_tipo_veneno("de morrer");
+}
+
 template <typename T>
 void receberValoresExotico(T* ptr)
 {
-	cout<<"template Exotico: "<<ptr->getM_nome_batismo()<<endl;
+	//cout<<"template Exotico: "<<ptr->getM_nome_batismo()<<endl;
 	ptr->setM_pais_origem("Brazil");
-	cout<<ptr->getM_pais_origem()<<endl;
+	//cout<<ptr->getM_pais_origem()<<endl;
 }
 template <typename T>
 void receberValoresNativo(T* ptr)
 {
-	cout<<"template Nativo: "<<ptr->getM_nome_batismo()<<endl;
+	//cout<<"template Nativo: "<<ptr->getM_nome_batismo()<<endl;
 }

@@ -36,7 +36,7 @@ int tipoAnimal(int num);
 void identificador(int num);
 
 template <typename T>
-void receverValoresAnimal(T* animal);
+void receberValoresAnimal(T* animal);
 
 template <typename T>
 void receberValoresAnfibio(T* anfibio);
