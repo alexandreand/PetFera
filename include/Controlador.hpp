@@ -35,22 +35,29 @@ int tipoAnimal(int num);
 
 void identificador(int num);
 
-void receverValoresAnimal(Animal* animal);
+template <typename T>
+void receverValoresAnimal(T* animal);
 
-void receberValoresAnfibio();
-void receberValoresAve();
-void receberValoresMamifero();
-void receberValoresReptil();
+template <typename T>
+void receberValoresAnfibio(T* anfibio);
 
-void receberValoresAnfExot();
-void receberValoresAveExot();
-void receberValoresMamExot();
-void receberValoresRepExot();
-void receberValoresAnfNat();
-void receberValoresAveNat();
-void receberValoresMamNat();
-void receberValoresRepNat();
+template <typename T>
+void receberValoresAve(T* ave);
 
-void cadastrar();
+template <typename T>
+void receberValoresMamifero(T* mamifero);
+
+template <typename T>
+void receberValoresReptil(T* reptil);
+
+template <typename T>
+void receberValoresExotico(T* ptr);
+
+template <typename T>
+void receberValoresNativo(T* ptr);
+
+//teste
+
+
 
 #endif

@@ -5,17 +5,19 @@
 
 #endif
 
-
 #include <string>
 using namespace std;
 
 class Ave : public Animal{
 	private:
-		string m_cor_pelo;
+		double m_tam_bico;
+		double m_env_asas;
 	public:
 		Ave();
 		~Ave();
 		//gets e sets
-		void setM_cor_pelo(string value);
-		string getM_cor_pelo();
+		void setM_tam_bico(double value);
+		double getM_tam_bico();
+		void setM_env_asas(double value);
+		double getM_env_asas();
 };

@@ -7,14 +7,11 @@
 
 class Mamifero : public Animal{
 	private:
-		double m_tam_bico;
-		double m_env_asas;
+		string m_cor_pelo;
 	public:
 		Mamifero();
 		~Mamifero();
 		//gets e sets
-		void setM_tam_bico(double value);
-		double getM_tam_bico();
-		void setM_env_asas(double value);
-		double getM_env_asas();
+		void setM_cor_pelo(string value);
+		string getM_cor_pelo();
 };

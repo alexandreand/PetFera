@@ -8,19 +8,11 @@ Mamifero::~Mamifero()
 {
 
 }
-void Mamifero::setM_tam_bico(double value)
+void Mamifero::setM_cor_pelo(string value)
 {
-	this->m_tam_bico = value;
+	this->m_cor_pelo = value;
 }
-double Mamifero::getM_tam_bico()
+string Mamifero::getM_cor_pelo()
 {
-	return this->m_tam_bico;
-}
-void Mamifero::setM_env_asas(double value)
-{
-	this->m_env_asas = value;
-}
-double Mamifero::getM_env_asas()
-{
-	return this->m_env_asas;
+	return this->m_cor_pelo;
 }

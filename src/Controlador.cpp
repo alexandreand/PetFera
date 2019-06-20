@@ -42,7 +42,8 @@ int tipoAnimal(int num)
 	return 0;
 }
 
-void receberValoresAnimal(Animal* animal)
+template <typename T>
+void receberValoresAnimal(T* animal)
 {
 	animal->setM_classe("Bichano");
 	animal->setM_nome_cientifico("ghatos");
@@ -53,110 +54,126 @@ void receberValoresAnimal(Animal* animal)
 	animal->setM_nome_batismo("Garfield");
 
 	cout<<animal->getM_nome_batismo()<<endl;
-	cout<<"ola"<<endl;
 }
+
+
+template <typename T>
+void receberValoresAnfibio(T* anfibio)
+{
+	anfibio->setM_total_mudas(2);
+	//anfibio->setM_ultima_muda();
+}
+
+template <typename T>
+void receberValoresAve(T* ave)
+{
+	ave->setM_tam_bico(12.32);
+	ave->setM_env_asas(32.2);
+}
+
+template <typename T>
+void receberValoresMamifero(T* mamifero)
+{
+	mamifero->setM_cor_pelo("vermelha");
+}
+
+template <typename T>
+void receberValoresReptil(T* reptil)
+{
+	reptil->setM_venenoso(true);
+	reptil->setM_tipo_veneno("de morrer");
+}
+
 
 void identificador(int num)
 {
+	Animal* a = new Animal();
 	switch(num)
 	{
 		case 6://AnfibioExotico
 			{ 
-			
-			//Animal* a;
-			cout<<"AnfibioExotico"<<endl;
-			Animal* a = new Animal();
-			cout<<"Ola"<<endl;
-			receberValoresAnimal(a);
-			cout<<a->getM_nome_batismo()<<endl;
-			//cout<<a.getM_nome_batismo()<<endl;
-			//cout<<"ola"<<endl;
+			cout<<"AnfibioExotico"<<endl;//flag
+			AnfibioExotico* anf_exo = new AnfibioExotico();
+			receberValoresAnimal(anf_exo);
+			receberValoresAnfibio(anf_exo);
+			receberValoresExotico(anf_exo);
 			}
 			break;
-		case 7://AveExotica
+		case 7://AveExotico
+			{
 			cout<<"AveExotico"<<endl;
+			AveExotico* ave_exo = new AveExotico();
+			receberValoresAnimal(ave_exo);
+			receberValoresAve(ave_exo);
+			receberValoresExotico(ave_exo);
+			}
 			break;
 		case 8://MamiferoExotico
+			{
 			cout<<"MamiferoExotico"<<endl;
+			MamiferoExotico* mam_exo = new MamiferoExotico();
+			receberValoresAnimal(mam_exo);
+			receberValoresMamifero(mam_exo);
+			receberValoresExotico(mam_exo);
+			}
 			break;
 		case 9://ReptilExotico
+			{
 			cout<<"ReptilExotico"<<endl;
+			ReptilExotico* rep_exo = new ReptilExotico();
+			receberValoresAnimal(rep_exo);
+			receberValoresReptil(rep_exo);
+			receberValoresExotico(rep_exo);
+			}
 			break;
 		case 10://AnfibioNativo
+			{
 			cout<<"AnfibioNativo"<<endl;
+			AnfibioNativo* anf_nat = new AnfibioNativo();
+			receberValoresAnimal(anf_nat);
+			receberValoresAnfibio(anf_nat);
+			receberValoresNativo(anf_nat);
+			}
 			break;
 		case 11://AveNativo
+			{
 			cout<<"AveNativo"<<endl;
+			AveNativo* ave_nat = new AveNativo();
+			receberValoresAnimal(ave_nat);
+			receberValoresAve(ave_nat);
+			receberValoresNativo(ave_nat);
+			}
 			break;
 		case 12://MamiferoNativo
+			{
 			cout<<"MamiferoNativo"<<endl;
+			MamiferoNativo* mam_nat = new MamiferoNativo();
+			receberValoresAnimal(mam_nat);
+			receberValoresMamifero(mam_nat);
+			receberValoresNativo(mam_nat);
+			}
 			break;
 		case 13://ReptilNativo
+			{
 			cout<<"ReptilNativo"<<endl;
+			ReptilNativo* rep_nat = new ReptilNativo();
+			receberValoresAnimal(rep_nat);
+			receberValoresReptil(rep_nat);
+			receberValoresNativo(rep_nat);
+			}
 			break;
 	}
 }
 
-void receberValoresAnfibio()
+template <typename T>
+void receberValoresExotico(T* ptr)
 {
-
+	cout<<"template Exotico: "<<ptr->getM_nome_batismo()<<endl;
+	ptr->setM_pais_origem("Brazil");
+	cout<<ptr->getM_pais_origem()<<endl;
 }
-
-void receberValoresAve()
+template <typename T>
+void receberValoresNativo(T* ptr)
 {
-
-}
-
-void receberValoresMamifero()
-{
-
-}
-
-void receberValoresReptil()
-{
-
-}
-
-void receberValoresAnfExot()
-{
-
-}
-
-void receberValoresAveExot()
-{
-	
-}
-
-void receberValoresMamExot()
-{
-	
-}
-
-void receberValoresRepExot()
-{
-	
-}
-
-void receberValoresAnfNat()
-{
-	
-}
-
-void receberValoresAveNat()
-{
-	
-}
-
-void receberValoresMamNat()
-{
-	
-}
-
-void receberValoresRepNat()
-{
-	
-}
-void cadastrar()
-{
-
+	cout<<"template Nativo: "<<ptr->getM_nome_batismo()<<endl;
 }
