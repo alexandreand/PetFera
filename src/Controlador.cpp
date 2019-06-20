@@ -7,13 +7,15 @@ void controlar()
 	Tratador* t1 = new Tratador;
 	Funcionario* f1 = new Funcionario;
 	Veterinario* v1 = new Veterinario;
+	Animal* a = new Animal;
 }
 
 
 void cadastro()
 {
 	int result = classeAnimal();
-	receberValores(result);
+	cout<<result<<endl;
+	identificador(result);
 }
 
 int classeAnimal()
@@ -40,39 +42,120 @@ int tipoAnimal(int num)
 	return 0;
 }
 
+Animal receberValoresAnimal()
+{
+	Animal* animal = new Animal();
+	animal->setM_classe("Bichano");
+	animal->setM_nome_cientifico("ghatos");
+	animal->setM_sexo('c');
+	animal->setM_dieta("Come pa crl");
+	//Veterinario
+	//Tratador
+	animal->setM_nome_batismo("Garfield");
+
+	cout<<animal->getM_nome_batismo()<<endl;
+	cout<<"ola"<<endl;
+	return *animal;
+}
+
 void identificador(int num)
 {
 	switch(num)
 	{
 		case 6://AnfibioExotico
-
+			{ 
+			
+			//Animal* a;
+			cout<<"AnfibioExotico"<<endl;
+			Animal* a = new Animal();
+			cout<<"Ola"<<endl;
+			*a = receberValoresAnimal();
+			//cout<<a.getM_nome_batismo()<<endl;
+			//cout<<"ola"<<endl;
+			}
 			break;
 		case 7://AveExotica
-
+			cout<<"AveExotico"<<endl;
 			break;
 		case 8://MamiferoExotico
-
+			cout<<"MamiferoExotico"<<endl;
 			break;
 		case 9://ReptilExotico
-
+			cout<<"ReptilExotico"<<endl;
 			break;
 		case 10://AnfibioNativo
-
+			cout<<"AnfibioNativo"<<endl;
 			break;
 		case 11://AveNativo
-
+			cout<<"AveNativo"<<endl;
 			break;
 		case 12://MamiferoNativo
-
+			cout<<"MamiferoNativo"<<endl;
 			break;
 		case 13://ReptilNativo
-
+			cout<<"ReptilNativo"<<endl;
 			break;
 	}
 }
-int receberValores(int num)
+
+void receberValoresAnfibio()
 {
 
+}
+
+void receberValoresAve()
+{
+
+}
+
+void receberValoresMamifero()
+{
+
+}
+
+void receberValoresReptil()
+{
+
+}
+
+void receberValoresAnfExot()
+{
+
+}
+
+void receberValoresAveExot()
+{
+	
+}
+
+void receberValoresMamExot()
+{
+	
+}
+
+void receberValoresRepExot()
+{
+	
+}
+
+void receberValoresAnfNat()
+{
+	
+}
+
+void receberValoresAveNat()
+{
+	
+}
+
+void receberValoresMamNat()
+{
+	
+}
+
+void receberValoresRepNat()
+{
+	
 }
 void cadastrar()
 {

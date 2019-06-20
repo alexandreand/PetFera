@@ -2,6 +2,6 @@
 
 int main()
 {
-	int result = menu();
+	menu();
 	return 0;
 }

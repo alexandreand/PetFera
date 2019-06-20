@@ -9,59 +9,59 @@ Animal::~Animal()
 	
 }
 
-void Animal::setClasse(string classe)
+void Animal::setM_classe(string value)
 {
-	this->m_classe = classe;
+	this->m_classe = value;
 }
-string Animal::getClasse()
+string Animal::getM_classe()
 {
 	return this->m_classe;
 }
-void Animal::setNomeCientifico(string nome)
+void Animal::setM_nome_cientifico(string value)
 {
-	this->m_nome_cientifico = nome;
+	this->m_nome_cientifico = value;
 }
-string Animal::getNomeCientifico()
+string Animal::getM_nome_cientifico()
 {
 	return this->m_nome_cientifico;
 }
-void Animal::setSexo(char sexo)
+void Animal::setM_sexo(char value)
 {
-	this->m_sexo = sexo;
+	this->m_sexo = value;
 }
-char Animal::getSexo()
+char Animal::getM_sexo()
 {
 	return this->m_sexo;
 }
-void Animal::setDieta(string dieta)
+void Animal::setM_dieta(string value)
 {
-	this->m_dieta = dieta;
+	this->m_dieta = value;
 }
-string Animal::getDieta()
+string Animal::getM_dieta()
 {
 	return this->m_dieta;
 }
-void Animal::setVeterinario(Veterinario v)
+void Animal::setM_veterinario(Veterinario v)
 {
 	this->m_veterinario = v;
 }
-Veterinario Animal::getVeterinario()
+Veterinario Animal::getM_veterinario()
 {
 	return this->m_veterinario;
 }
-void Animal::setTratador(Tratador t)
+void Animal::setM_tratador(Tratador t)
 {
 	this->m_tratador = t;
 }
-Tratador Animal::getTratador()
+Tratador Animal::getM_tratador()
 {
 	return this->m_tratador;
 }
-void Animal::setNomeBatismo(string nome)
+void Animal::setM_nome_batismo(string value)
 {
-	this->m_nome_batismo = nome;
+	this->m_nome_batismo = value;
 }
-string Animal::getNomeBatismo()
+string Animal::getM_nome_batismo()
 {
 	return this->m_nome_batismo;
 }

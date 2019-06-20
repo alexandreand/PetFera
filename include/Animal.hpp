@@ -22,24 +22,24 @@ class Animal{
 		Animal(string classe, string nome_cientifico);
 		~Animal();
 
-		void setClasse(string classe);
-		string getClasse();
+		void setM_classe(string value);
+		string getM_classe();
 
-		void setNomeCientifico(string nome);
-		string getNomeCientifico();
+		void setM_nome_cientifico(string value);
+		string getM_nome_cientifico();
 
-		void setSexo(char sexo);
-		char getSexo();
+		void setM_sexo(char value);
+		char getM_sexo();
 
-		void setDieta(string dieta);
-		string getDieta();
+		void setM_dieta(string value);
+		string getM_dieta();
 
-		void setVeterinario(Veterinario v);
-		Veterinario getVeterinario();
+		void setM_veterinario(Veterinario v);
+		Veterinario getM_veterinario();
 
-		void setTratador(Tratador t);
-		Tratador getTratador();
+		void setM_tratador(Tratador t);
+		Tratador getM_tratador();
 
-		void setNomeBatismo(string nome);
-		string getNomeBatismo();
+		void setM_nome_batismo(string value);
+		string getM_nome_batismo();
 };

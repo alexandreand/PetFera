@@ -1,9 +1,10 @@
 CC=g++
+C_FLAGS = -std=c++11
 obj = Animal.o Funcionario.o Tratador.o Veterinario.o Anfibio.o Ave.o Mamifero.o Reptil.o AnfibioNativo.o AveNativo.o MamiferoNativo.o ReptilNativo.o AnfibioExotico.o MamiferoExotico.o AveExotico.o Controlador.o Menu.o
 all: $(obj) main
 
 main: main.cpp
-	$(CC) main.cpp $(obj) -o main
+	$(CC) $(C_FLAGS) main.cpp $(obj) -o main
 
 Animal.o: ../include/Animal.hpp ../src/Animal.cpp
 	$(CC) ../src/Animal.cpp -c

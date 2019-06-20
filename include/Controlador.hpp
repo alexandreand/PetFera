@@ -20,7 +20,7 @@
 #include "../include/Tratador.hpp"
 #include "../include/Veterinario.hpp"
 */
-
+#include <memory>
 #include <iostream>
 
 using namespace std;
@@ -33,9 +33,23 @@ int classeAnimal();
 
 int tipoAnimal(int num);
 
-int receberValores(int num);
-
 void identificador(int num);
+
+Animal receverValoresAnimal();
+
+void receberValoresAnfibio();
+void receberValoresAve();
+void receberValoresMamifero();
+void receberValoresReptil();
+
+void receberValoresAnfExot();
+void receberValoresAveExot();
+void receberValoresMamExot();
+void receberValoresRepExot();
+void receberValoresAnfNat();
+void receberValoresAveNat();
+void receberValoresMamNat();
+void receberValoresRepNat();
 
 void cadastrar();
 
