@@ -35,7 +35,7 @@ int tipoAnimal(int num);
 
 void identificador(int num);
 
-Animal receverValoresAnimal();
+void receverValoresAnimal(Animal* animal);
 
 void receberValoresAnfibio();
 void receberValoresAve();

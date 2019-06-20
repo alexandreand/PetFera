@@ -42,9 +42,8 @@ int tipoAnimal(int num)
 	return 0;
 }
 
-Animal receberValoresAnimal()
+void receberValoresAnimal(Animal* animal)
 {
-	Animal* animal = new Animal();
 	animal->setM_classe("Bichano");
 	animal->setM_nome_cientifico("ghatos");
 	animal->setM_sexo('c');
@@ -55,7 +54,6 @@ Animal receberValoresAnimal()
 
 	cout<<animal->getM_nome_batismo()<<endl;
 	cout<<"ola"<<endl;
-	return *animal;
 }
 
 void identificador(int num)
@@ -69,7 +67,8 @@ void identificador(int num)
 			cout<<"AnfibioExotico"<<endl;
 			Animal* a = new Animal();
 			cout<<"Ola"<<endl;
-			*a = receberValoresAnimal();
+			receberValoresAnimal(a);
+			cout<<a->getM_nome_batismo()<<endl;
 			//cout<<a.getM_nome_batismo()<<endl;
 			//cout<<"ola"<<endl;
 			}
