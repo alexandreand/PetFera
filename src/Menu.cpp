@@ -10,11 +10,11 @@ int menu()
 	switch(escolha)
 	{
 		case 1://Cadastro ​ de um novo animal a ser comercializado
-			cadastro();
+			cadastroAnimal();
 			break;
 
 		case 2://Remoção ​ de um animal da lista após a sua comercialização;
-
+			remocaoAnimal();
 			break;
 
 		case 3://Alteração ​ dos dados cadastrais de um animal;  

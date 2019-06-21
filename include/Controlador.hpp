@@ -25,15 +25,16 @@
 
 using namespace std;
 
+//Cadastro de Amimais___________________
 void controlar();
 
-void cadastro();
+void cadastroAnimal();
 
 int classeAnimal();
 
 int tipoAnimal(int num);
 
-void identificador(int num);
+void identificador(int num);//nomeclatura fora de contexto
 
 template <typename T>
 void receberValoresAnimal(T* animal);
@@ -55,9 +56,15 @@ void receberValoresExotico(T* ptr);
 
 template <typename T>
 void receberValoresNativo(T* ptr);
+//_______________________________________
+//Consultar
+void remocaoAnimal();
 
-//teste
+string tagRemocao(string nome_tabela, string id_animal);
 
+int verificarExistenciaAnimalbyID();
+
+int verificarExistenciaPessoabyID();
 
 
 #endif

@@ -11,7 +11,7 @@ void controlar()
 }
 
 
-void cadastro()
+void cadastroAnimal()
 {
 	int result = classeAnimal();
 	cout<<result<<endl;
@@ -68,6 +68,7 @@ void identificador(int num)
 			receberValoresAnimal(anf_exo);
 			receberValoresAnfibio(anf_exo);
 			receberValoresExotico(anf_exo);
+
 			cout<<anf_exo->mysql_insert("teste")<<endl;
 			}
 			break;
@@ -178,4 +179,24 @@ template <typename T>
 void receberValoresNativo(T* ptr)
 {
 	//cout<<"template Nativo: "<<ptr->getM_nome_batismo()<<endl;
+}
+
+//______________________________________________
+//Consultar
+
+void remocaoAnimal()
+{
+	string teste = tagRemocao("tabela", "123");
+}
+
+string tagRemocao(string nome_tabela, string id_animal)
+{
+	string cmd;
+
+	cmd = "DELETE FROM " +	nome_tabela
+						 +	" WHERE ID="
+						 +	id_animal + ";";
+
+	cout<<cmd<<endl;
+	return "a";
 }
