@@ -62,9 +62,9 @@ void remocaoAnimal();
 
 string tagRemocao(string nome_tabela, string id_animal);
 
-int verificarExistenciaAnimalbyID();
+int verificarExistenciaAnimalbyID(string id);//0 - Nada encontrado, 1 - Algo encontrado
 
-int verificarExistenciaPessoabyID();
+int verificarExistenciaPessoabyID(string id);//0 - Nada encontrado, 1 - Algo encontrado
 
 
 #endif

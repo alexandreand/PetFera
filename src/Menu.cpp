@@ -18,7 +18,7 @@ int menu()
 			break;
 
 		case 3://Alteração ​ dos dados cadastrais de um animal;  
-		
+			
 			break;
 
 		case 4://Consulta ​ aos dados cadastrais de um determinado animal ou por uma classe de animais;

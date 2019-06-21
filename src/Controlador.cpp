@@ -16,6 +16,7 @@ void cadastroAnimal()
 	int result = classeAnimal();
 	cout<<result<<endl;
 	identificador(result);
+	
 }
 
 int classeAnimal()
@@ -138,9 +139,6 @@ void identificador(int num)
 	}
 }
 
-
-
-
 template <typename T>
 void receberValoresAnfibio(T* anfibio)
 {
@@ -186,7 +184,8 @@ void receberValoresNativo(T* ptr)
 
 void remocaoAnimal()
 {
-	string teste = tagRemocao("tabela", "123");
+	string tag = tagRemocao("tabela", "123");
+	verificarExistenciaAnimalbyID("123");
 }
 
 string tagRemocao(string nome_tabela, string id_animal)
@@ -198,5 +197,25 @@ string tagRemocao(string nome_tabela, string id_animal)
 						 +	id_animal + ";";
 
 	cout<<cmd<<endl;
-	return "a";
+	return cmd;
+}
+
+int verificarExistenciaAnimalbyID(string id)
+{
+	string cmd;
+
+	cmd = "SELECT * FROM Animais WHERE ID="+id+";";
+
+	cout << cmd <<endl;
+	return 0;
+}
+
+int verificarExistenciaPessoabyID(string id)
+{
+	string cmd;
+
+	cmd = "SELECT * FROM Funcionarios WHERE ID="+id+";";
+
+	cout << cmd <<endl;
+	return 0;
 }
