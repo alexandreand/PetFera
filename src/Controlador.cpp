@@ -46,8 +46,8 @@ int tipoAnimal(int num)
 template <typename T>
 void receberValoresAnimal(T* animal)
 {
-	animal->setM_classe("Bichano");
 	animal->setM_nome_cientifico("ghatos");
+	animal->setM_classe("Bichano");
 	animal->setM_sexo('c');
 	animal->setM_dieta("Come pa crl");
 	//Veterinario
@@ -166,11 +166,13 @@ void receberValoresReptil(T* reptil)
 	reptil->setM_tipo_veneno("de morrer");
 }
 
+
 template <typename T>
 void receberValoresExotico(T* ptr)
 {
 	//cout<<"template Exotico: "<<ptr->getM_nome_batismo()<<endl;
 	ptr->setM_pais_origem("Brazil");
+	ptr->setM_autorizacao_ibama("pode levar");
 	//cout<<ptr->getM_pais_origem()<<endl;
 }
 template <typename T>

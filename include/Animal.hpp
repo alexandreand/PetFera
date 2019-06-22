@@ -31,6 +31,9 @@ class Animal{
 		void setM_sexo(char value);
 		char getM_sexo();
 
+		void setM_tamanho(string value);
+		string getM_tamanho();
+
 		void setM_dieta(string value);
 		string getM_dieta();
 

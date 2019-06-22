@@ -29,25 +29,38 @@ string AnfibioExotico::getM_autorizacao_ibama()
 
 string AnfibioExotico::mysql_insert(string nome_tabela)
 {
+
 	string cmd;
 
 	string total_mudas;
 	ostringstream convert;
 	convert << getM_total_mudas();
-	total_mudas =  convert.str();
+	total_mudas = convert.str();
 
+
+	//Substituir tamanho por classe /falta veterinario e tratador
 	cmd = "INSERT INTO " +	nome_tabela
 						 +	"("
-						 +	"classe,"
 						 +	"nome_cientifico,"
+						 +	"classe,"
 						 +	"sexo,"
-						 +	"total_mudas"
+						 +	"dieta,"
+						 +	"id_veterinario,"
+						 +	"id_tratador,"
+						 +	"nome_batismo,"
+						 +	"total_mudas,"
+						 +	"ultima_muda,"
+						 +	"pais_origem,"
+						 +	"autorização_ibama"
 						 +	") VALUES("
-						 +	getM_classe() + ", "
 						 +	getM_nome_cientifico() + ", "
+						 +	getM_classe() + ", "
 						 +	getM_sexo() + ", "
+						 +	getM_dieta() + ", "
 						 +	getM_nome_batismo() + ", "
-						 +	total_mudas
+						 +	total_mudas  + ", "
+						 +	getM_pais_origem() + ", "
+						 +	getM_autorizacao_ibama()
 						 +	");";
 	return cmd;
 }
