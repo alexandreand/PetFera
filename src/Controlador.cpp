@@ -105,12 +105,16 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_nat);
 		receberValoresNativo(anf_nat);
 
+		cout<<anf_nat->mysql_insert("teste")<<endl;//flag
+
 	}else if (value.compare("ave_nativo") == 0)
 	{
 		AveNativo* ave_nat = new AveNativo();
 		receberValoresAnimal(ave_nat);
 		receberValoresAve(ave_nat);
 		receberValoresNativo(ave_nat);
+
+		cout<<ave_nat->mysql_insert("teste")<<endl;//flag
 
 	}else if (value.compare("mamifero_nativo") == 0)
 	{
@@ -119,12 +123,16 @@ void receberValores(string value)
 		receberValoresMamifero(mam_nat);
 		receberValoresNativo(mam_nat);
 
+		cout<<mam_nat->mysql_insert("teste")<<endl;//flag
+
 	}else if (value.compare("reptil_nativo") == 0)
 	{
 		ReptilNativo* rep_nat = new ReptilNativo();
 		receberValoresAnimal(rep_nat);
 		receberValoresReptil(rep_nat);
 		receberValoresNativo(rep_nat);
+
+		cout<<rep_nat->mysql_insert("teste")<<endl;//flag
 	}
 }
 
@@ -549,4 +557,38 @@ string camposAnimalNativo(int num)
 	{
 		return "autorizacao_ibama";
 	}
+}
+
+//______________________________________________
+//Consutar
+
+void consultar()
+{
+	int escolha;
+	cout<<"1 - Por classe\n2 - Por Classe e tipo\n3 - Todos os Animais cadastrados\n4 - por ID"<<endl;
+	cin>>escolha;
+	if (escolha == 1)
+	{
+		
+	}else if (escolha == 2)
+	{
+		string tabela = identificador(classeAnimal());
+		string tag = tagConsulta(tabela);
+
+		cout<<tag<<endl;
+	}else if (escolha == 3)
+	{
+
+	}
+	else
+	{
+		cout<<"Opção Invalida"<<endl;
+	}
+}
+
+string tagConsulta(string tabela)
+{
+	string cmd = "SELECT * FROM "+tabela+";";
+
+	return cmd;
 }

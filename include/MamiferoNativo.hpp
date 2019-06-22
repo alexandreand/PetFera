@@ -28,5 +28,7 @@ class MamiferoNativo : public Mamifero
 
 		void setM_autorizacao_ibama(string value);
 		string getM_autorizacao_ibama();
+
+		string mysql_insert(string nome_tabela);
 	
 };

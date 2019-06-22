@@ -81,4 +81,11 @@ string camposAnimalExotico(int num);
 
 string camposAnimalNativo(int num);
 
+//_______________________________________
+//Consultar
+
+void consultar();
+
+string tagConsulta(string tabela);
+
 #endif

@@ -6,7 +6,7 @@
 #endif
 
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 class ReptilNativo : public Reptil
@@ -27,5 +27,6 @@ class ReptilNativo : public Reptil
 
 		void setM_autorizacao_ibama(string value);
 		string getM_autorizacao_ibama();
-	
+		
+		string mysql_insert(string nome_tabela);
 };
