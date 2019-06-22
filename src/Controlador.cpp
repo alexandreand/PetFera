@@ -272,20 +272,36 @@ int verificarExistenciaPessoabyID(string id)
 
 void alteracaoAnimal()
 {
-	string tabela, campo, novo_valor;
+	string tabela, campo, novo_valor, id_animal;
+	int validadeID;
 	//escolher classe e tipo
 	tabela = identificador(classeAnimal());
+
 	//receber e verificar existencia do id
+	while(validadeID != 1)
+	{
+		cout<<"Digite o Id do Animal: ";
+		cin>>id_animal;
+
+		validadeID = verificarExistenciaAnimalbyID(id_animal);
+		break;
+		if(validadeID == 0)
+		{
+			cout<<"Nada encontrado"<<endl;
+		}
+	}
+
 	//campo
 	campo = identificarCampo(tabela);
 
+	//Novo valor
 	cout<<"Novo Valor: ";
 	cin>>novo_valor;
 	cout<<"campo: "<<campo<<endl;
 
-	string tag = tagAlteracao(tabela, "123", campo, novo_valor);
+	string tag = tagAlteracao(tabela, id_animal, campo, novo_valor);
 
-	cout<<tag<<endl;;
+	cout<<tag<<endl;
 }
 
 
@@ -305,48 +321,155 @@ string identificarCampo(string tabela)
 		cin>>escolha;
 		if (escolha > 0 && escolha < 8)
 		{
-			/* code */
-			cout<<"escolha: "<< escolha <<endl;
 			campo = camposAnimal(escolha);
 		}else if (escolha == 8)
 		{
-			/* code */
-			cout<<"escolha: "<< escolha <<endl;
 			campo = "total_mudas";
 		}else if (escolha > 9 && escolha < 12)
 		{
-			cout<<"escolha: "<< escolha <<endl;
 			campo = camposAnimalExotico(escolha);
 		}
+		
+		cout<<"escolha: "<< escolha <<endl;
 		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("ave_exotico") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Tamanho do bico\n9 - Envergadura da asa\n10 - Pais de Origem\n11 - Autorização do Ibama\n";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "tam_bico";
+		}else if (escolha == 9)
+		{
+			campo = "env_asas";
+		}else if (escolha > 9 && escolha < 12)
+		{
+			campo = camposAnimalExotico(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("mamifero_exotico") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Cor da pele\n10 - Pais de Origem\n11 - Autorização do Ibama\n";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "cor_pelo";
+		}else if (escolha > 9 && escolha < 12)
+		{
+			campo = camposAnimalExotico(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("reptil_exotico") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Venenoso(0 ou 1)\n9 - Tipo do veneno\n10 - Pais de Origem\n11 - Autorização do Ibama\n";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "venenoso";
+		}else if (escolha == 9)
+		{
+			campo = "tipo_veneno";
+		}else if (escolha > 9 && escolha < 12)
+		{
+			campo = camposAnimalExotico(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("anfibio_nativo") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Total de mudas\n10 - UF de origem\n11 - Autorização\n12 - Autorização do Ibama\n";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "total_mudas";
+		}else if (escolha > 9 && escolha < 13)
+		{
+			campo = camposAnimalNativo(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("ave_nativo") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Tamanho do bico\n9 - Envergadura da asa\n10 - UF de origem\n11 - Autorização\n12 - Autorização do Ibama";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "tam_bico";
+		}else if (escolha == 9)
+		{
+			campo = "env_asas";
+		}else if (escolha > 9 && escolha < 13)
+		{
+			campo = camposAnimalNativo(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("mamifero_nativo") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Cor da pele\n10 - UF de origem\n11 - Autorização\n12 - Autorização do Ibama";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "cor_pelo";
+		}else if (escolha > 9 && escolha < 13)
+		{
+			campo = camposAnimalNativo(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 
 	}else if (tabela.compare("reptil_nativo") == 0)
 	{
-		/* code */
+		cout<< "1 - Nome Científico\n2 - Classe\n3 - Sexo\n4 - Dieta\n5 - Veterinario\n6 - Tratador\n7 - Nome Batismo\n8 - Venenoso(0 ou 1)\n9 - Tipo do veneno\n10 - Pais de Origem\n11 - Autorização do Ibama\n";
+		cin>>escolha;
+		if (escolha > 0 && escolha < 8)
+		{
+			campo = camposAnimal(escolha);
+		}else if (escolha == 8)
+		{
+			campo = "venenoso";
+		}else if (escolha == 9)
+		{
+			campo = "tipo_veneno";
+		}else if (escolha > 9 && escolha < 13)
+		{
+			campo = camposAnimalExotico(escolha);
+		}
+		
+		cout<<"escolha: "<< escolha <<endl;
+		cout <<"campo: "<<campo<<endl;
 	}
 	return campo;
 }
