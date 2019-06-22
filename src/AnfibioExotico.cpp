@@ -39,6 +39,7 @@ string AnfibioExotico::mysql_insert(string nome_tabela)
 
 
 	//Substituir tamanho por classe /falta veterinario e tratador
+	//e implementar date em ultima muda
 	cmd = "INSERT INTO " +	nome_tabela
 						 +	"("
 						 +	"nome_cientifico,"

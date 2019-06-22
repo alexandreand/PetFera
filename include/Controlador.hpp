@@ -34,7 +34,9 @@ int classeAnimal();
 
 int tipoAnimal(int num);
 
-void identificador(int num);//nomeclatura fora de contexto
+void receberValores(string value);
+
+string identificador(int num);//nomeclatura fora de contexto
 
 template <typename T>
 void receberValoresAnimal(T* animal);
@@ -57,7 +59,7 @@ void receberValoresExotico(T* ptr);
 template <typename T>
 void receberValoresNativo(T* ptr);
 //_______________________________________
-//Consultar
+//Remoção
 void remocaoAnimal();
 
 string tagRemocao(string nome_tabela, string id_animal);
@@ -65,6 +67,18 @@ string tagRemocao(string nome_tabela, string id_animal);
 int verificarExistenciaAnimalbyID(string id);//0 - Nada encontrado, 1 - Algo encontrado
 
 int verificarExistenciaPessoabyID(string id);//0 - Nada encontrado, 1 - Algo encontrado
+//_______________________________________
+//Alteração
+void alteracaoAnimal();
 
+string tagAlteracao(string nome_tabela, string id_animal, string campo, string valor);
+
+string identificarCampo(string tabela);
+
+string camposAnimal(int num);
+
+string camposAnimalExotico(int num);
+
+string camposAnimalNativo(int num);
 
 #endif
