@@ -7,7 +7,7 @@
 
 class Reptil : public Animal{
 	private:
-		bool m_venenoso;
+		int m_venenoso;
 		string m_tipo_veneno;
 	public:
 		Reptil();
@@ -15,6 +15,6 @@ class Reptil : public Animal{
 		//gets e sets
 		void setM_tipo_veneno(string value);
 		string getM_tipo_veneno();
-		void setM_venenoso(bool value);
-		bool getM_venenoso();
+		void setM_venenoso(int value);
+		int getM_venenoso();
 };

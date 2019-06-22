@@ -22,7 +22,7 @@ int menu()
 			break;
 
 		case 4://Consulta ​ aos dados cadastrais de um determinado animal ou por uma classe de animais;
-
+			
 			break;
 
 		case 5://Consulta ​ de animais sob a responsabilidade de um determinado ​ Veterinário ​ ou ​ Tratador;

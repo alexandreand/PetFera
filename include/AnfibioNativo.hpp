@@ -6,7 +6,7 @@
 #endif
 
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 class AnfibioNativo : public Anfibio
@@ -29,6 +29,7 @@ class AnfibioNativo : public Anfibio
 		string getM_autorizacao_ibama();
 
 		//testando...
+		string mysql_insert(string nome_tabela);
 
 		
 };

@@ -63,67 +63,68 @@ void receberValores(string value)
 {
 	if (value.compare("anfibio_exotico") == 0)
 	{
-		/* code */
 		AnfibioExotico* anf_exo = new AnfibioExotico();
 		receberValoresAnimal(anf_exo);
 		receberValoresAnfibio(anf_exo);
 		receberValoresExotico(anf_exo);
+
 		cout<<anf_exo->mysql_insert("teste")<<endl;
 
 	}else if (value.compare("ave_exotico") == 0)
 	{
+
 		AveExotico* ave_exo = new AveExotico();
-			receberValoresAnimal(ave_exo);
-			receberValoresAve(ave_exo);
-			receberValoresExotico(ave_exo);
+		receberValoresAnimal(ave_exo);
+		receberValoresAve(ave_exo);
+		receberValoresExotico(ave_exo);
+
+		cout<<ave_exo->mysql_insert("teste")<<endl;
 
 	}else if (value.compare("mamifero_exotico") == 0)
 	{
-		/* code */
 		MamiferoExotico* mam_exo = new MamiferoExotico();
-			receberValoresAnimal(mam_exo);
-			receberValoresMamifero(mam_exo);
-			receberValoresExotico(mam_exo);
+		receberValoresAnimal(mam_exo);
+		receberValoresMamifero(mam_exo);
+		receberValoresExotico(mam_exo);
+
+		cout<<mam_exo->mysql_insert("teste")<<endl;
 
 	}else if (value.compare("reptil_exotico") == 0)
 	{
-		/* code */
 		ReptilExotico* rep_exo = new ReptilExotico();
-			receberValoresAnimal(rep_exo);
-			receberValoresReptil(rep_exo);
-			receberValoresExotico(rep_exo);
+		receberValoresAnimal(rep_exo);
+		receberValoresReptil(rep_exo);
+		receberValoresExotico(rep_exo);
+
+		cout<<rep_exo->mysql_insert("teste")<<endl;//flag
 
 	}else if (value.compare("anfibio_nativo") == 0)
 	{
-		/* code */
 		AnfibioNativo* anf_nat = new AnfibioNativo();
-			receberValoresAnimal(anf_nat);
-			receberValoresAnfibio(anf_nat);
-			receberValoresNativo(anf_nat);
+		receberValoresAnimal(anf_nat);
+		receberValoresAnfibio(anf_nat);
+		receberValoresNativo(anf_nat);
 
 	}else if (value.compare("ave_nativo") == 0)
 	{
-		/* code */
 		AveNativo* ave_nat = new AveNativo();
-			receberValoresAnimal(ave_nat);
-			receberValoresAve(ave_nat);
-			receberValoresNativo(ave_nat);
+		receberValoresAnimal(ave_nat);
+		receberValoresAve(ave_nat);
+		receberValoresNativo(ave_nat);
 
 	}else if (value.compare("mamifero_nativo") == 0)
 	{
-		/* code */
 		MamiferoNativo* mam_nat = new MamiferoNativo();
-			receberValoresAnimal(mam_nat);
-			receberValoresMamifero(mam_nat);
-			receberValoresNativo(mam_nat);
+		receberValoresAnimal(mam_nat);
+		receberValoresMamifero(mam_nat);
+		receberValoresNativo(mam_nat);
 
 	}else if (value.compare("reptil_nativo") == 0)
 	{
-		/* code */
 		ReptilNativo* rep_nat = new ReptilNativo();
-			receberValoresAnimal(rep_nat);
-			receberValoresReptil(rep_nat);
-			receberValoresNativo(rep_nat);
+		receberValoresAnimal(rep_nat);
+		receberValoresReptil(rep_nat);
+		receberValoresNativo(rep_nat);
 	}
 }
 
@@ -206,7 +207,7 @@ void receberValoresMamifero(T* mamifero)
 template <typename T>
 void receberValoresReptil(T* reptil)
 {
-	reptil->setM_venenoso(true);
+	reptil->setM_venenoso(1);
 	reptil->setM_tipo_veneno("de morrer");
 }
 
@@ -232,8 +233,26 @@ void receberValoresNativo(T* ptr)
 
 void remocaoAnimal()
 {
-	verificarExistenciaAnimalbyID("123");
-	string tag = tagRemocao("tabela", "123");
+	string tabela, id_animal;
+	int validadeID;
+
+	cout<<"Escolha o conjunto de Animais"<<endl;
+	tabela = identificador(classeAnimal());
+
+	while(validadeID != 1)
+	{
+		cout<<"Digite o Id do Animal: ";
+		cin>>id_animal;
+
+		validadeID = verificarExistenciaAnimalbyID(tabela, id_animal);
+		break;
+		if(validadeID == 0)
+		{
+			cout<<"Nada encontrado"<<endl;
+		}
+	}
+
+	string tag = tagRemocao(tabela, id_animal);//tag usada pra a função mysql_query
 }
 
 string tagRemocao(string nome_tabela, string id_animal)
@@ -248,21 +267,21 @@ string tagRemocao(string nome_tabela, string id_animal)
 	return cmd;
 }
 
-int verificarExistenciaAnimalbyID(string id)
+int verificarExistenciaAnimalbyID(string tabela, string id)
 {
 	string cmd;
 
-	cmd = "SELECT * FROM Animais WHERE ID="+id+";";
+	cmd = "SELECT * FROM "+ tabela +" WHERE ID="+id+";";
 
 	cout << cmd <<endl;//flag
 	return 0;
 }
 
-int verificarExistenciaPessoabyID(string id)
+int verificarExistenciaPessoabyID(string tabela, string id)
 {
 	string cmd;
 
-	cmd = "SELECT * FROM Funcionarios WHERE ID="+id+";";
+	cmd = "SELECT * FROM " + tabela + " WHERE ID=" + id + ";";
 
 	cout << cmd <<endl;//flag
 	return 0;
@@ -273,7 +292,7 @@ int verificarExistenciaPessoabyID(string id)
 void alteracaoAnimal()
 {
 	string tabela, campo, novo_valor, id_animal;
-	int validadeID;
+	int validadeID = 1;
 	//escolher classe e tipo
 	tabela = identificador(classeAnimal());
 
@@ -283,7 +302,7 @@ void alteracaoAnimal()
 		cout<<"Digite o Id do Animal: ";
 		cin>>id_animal;
 
-		validadeID = verificarExistenciaAnimalbyID(id_animal);
+		validadeID = verificarExistenciaAnimalbyID(tabela, id_animal);
 		break;
 		if(validadeID == 0)
 		{

@@ -18,11 +18,11 @@ string Reptil::getM_tipo_veneno()
 	return this->m_tipo_veneno;
 }
 
-void Reptil::setM_venenoso(bool value)
+void Reptil::setM_venenoso(int value)
 {
 	this->m_venenoso = value;
 }
-bool Reptil::getM_venenoso()
+int Reptil::getM_venenoso()
 {
 	return this->m_venenoso;
 }
