@@ -565,30 +565,60 @@ string camposAnimalNativo(int num)
 void consultar()
 {
 	int escolha;
+
+	while(1){
 	cout<<"1 - Por classe\n2 - Por Classe e tipo\n3 - Todos os Animais cadastrados\n4 - por ID"<<endl;
 	cin>>escolha;
 	if (escolha == 1)
 	{
-		
+		cout<<"1 - Anfibio\n2 - Ave\n3 - Mamifero\n4 - Réptil"<<endl;
+		cin>>escolha;
+		if (escolha == 1)
+		{
+			tagConsulta("anfibio_exotico");
+			tagConsulta("anfibio_nativo");
+		}else if (escolha == 2)
+		{
+			tagConsulta("ave_exotico");
+			tagConsulta("ave_nativo");
+		}else if (escolha == 3)
+		{
+			tagConsulta("mamifero_exotico");
+			tagConsulta("mamifero_nativo");
+		}else if (escolha == 4)
+		{
+			tagConsulta("reptil_exotico");
+			tagConsulta("reptil_nativo");
+		}else
+		{
+			cout<<"Escolha invalida"<<endl;
+		}
 	}else if (escolha == 2)
 	{
-		string tabela = identificador(classeAnimal());
-		string tag = tagConsulta(tabela);
-
-		cout<<tag<<endl;
+		string tag = tagConsulta(identificador(classeAnimal()));
 	}else if (escolha == 3)
 	{
-
+		tagConsulta("anfibio_exotico");
+		tagConsulta("anfibio_nativo");
+		tagConsulta("ave_exotico");
+		tagConsulta("ave_nativo");
+		tagConsulta("mamifero_exotico");
+		tagConsulta("mamifero_nativo");
+		tagConsulta("reptil_exotico");
+		tagConsulta("reptil_nativo");
 	}
 	else
 	{
 		cout<<"Opção Invalida"<<endl;
+		break;
 	}
+}
 }
 
 string tagConsulta(string tabela)
 {
 	string cmd = "SELECT * FROM "+tabela+";";
 
+	cout<<cmd<<endl;
 	return cmd;
 }
