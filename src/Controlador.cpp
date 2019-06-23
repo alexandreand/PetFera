@@ -300,7 +300,7 @@ int verificarExistenciaPessoabyID(string tabela, string id)
 void alteracaoAnimal()
 {
 	string tabela, campo, novo_valor, id_animal;
-	int validadeID = 1;
+	int validadeID;
 	//escolher classe e tipo
 	tabela = identificador(classeAnimal());
 
@@ -621,4 +621,44 @@ string tagConsulta(string tabela)
 
 	cout<<cmd<<endl;
 	return cmd;
+}
+
+//______________________________________________
+//Consultar por vet ou tratador
+
+void consultarPor_Vet_Tra()
+{
+	int escolha, validadeID;
+	string id_pessoa;
+
+	cout<<"1 - Veterinário\n2 - Tratador"<<endl;
+	cin>>escolha;
+	if (escolha == 1)
+	{
+		while(validadeID != 1){
+			cout<<"Informe o ID do veterinário: ";
+			cin>>id_pessoa;
+			validadeID = verificarExistenciaPessoabyID("veterinario", id_pessoa);
+			break;
+			if (validadeID == 0)
+			{
+				cout<<"Nenhum Veterinário encontrado"<<endl;
+			}
+		}
+	}else if (escolha == 2)
+	{
+		while(validadeID != 1){
+			cout<<"Informe o ID do tratador: ";
+			cin>>id_pessoa;
+			validadeID = verificarExistenciaPessoabyID("tratador", id_pessoa);
+			break;
+			if (validadeID == 0)
+			{
+				cout<<"Nenhum Tratador encontrado"<<endl;
+			}
+		}
+	}else
+	{
+		cout<<"Opção invalida"<<endl;
+	}
 }

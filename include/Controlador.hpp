@@ -88,4 +88,9 @@ void consultar();
 
 string tagConsulta(string tabela);
 
+
+//_______________________________________
+//Consultar por vet ou tratador
+
+void consultarPor_Vet_Tra();
 #endif

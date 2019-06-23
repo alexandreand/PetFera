@@ -26,7 +26,7 @@ int menu()
 			break;
 
 		case 5://Consulta ​ de animais sob a responsabilidade de um determinado ​ Veterinário ​ ou ​ Tratador;
-
+			consultarPor_Vet_Tra();
 			break;
 
 		case 6://
