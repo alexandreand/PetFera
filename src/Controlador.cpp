@@ -662,3 +662,49 @@ void consultarPor_Vet_Tra()
 		cout<<"Opção invalida"<<endl;
 	}
 }
+
+//______________________________________________
+//Cadastrar Funcionario
+
+void cadastrarFuncionario()
+{
+	int escolha;
+
+	cout<<"1 - Veterinário\n2 - Tratador"<<endl;
+	cin>>escolha;
+
+	if (escolha == 1)
+	{
+		Veterinario* vet = new Veterinario();
+
+		receberValoresFuncionario(vet);
+
+		vet->setM_crmv("oq é isso?");
+
+		cout<<vet->mysql_insert("veterianario")<<endl;
+	}else if (escolha == 2)
+	{
+		Tratador* trat = new Tratador();
+
+		receberValoresFuncionario(trat);
+
+		trat->setM_nivel_seguranca("Alto");
+
+		cout<<trat->mysql_insert("tratador")<<endl;
+		
+	}else
+	{
+		cout<<"Opção invalida"<<endl;
+	}
+}
+
+template <typename T>
+void receberValoresFuncionario(T* funcionario)
+{
+	funcionario->setM_nome("Nomedele");
+	funcionario->setM_cpf("123123123");
+	funcionario->setM_especialidade("Faz nada");
+	funcionario->setM_idade(30);
+	funcionario->setM_tipo_sanguineo(2);
+	funcionario->setM_fator_rh('a');
+}

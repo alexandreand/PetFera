@@ -19,6 +19,7 @@ class Funcionario{
 		Funcionario();
 		~Funcionario();
 		//gets e sets
+
 		void setM_id(int value);
 		int getM_id();
 

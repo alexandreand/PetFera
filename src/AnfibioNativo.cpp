@@ -59,7 +59,7 @@ string AnfibioNativo::mysql_insert(string nome_tabela)
 						 +	"total_mudas,"
 						 +	"ultima_muda,"
 						 +	"uf_origem,"
-						 +	"autorizacao"
+						 +	"autorizacao, "
 						 +	"autorização_ibama"
 						 +	") VALUES("
 						 +	getM_nome_cientifico() + ", "

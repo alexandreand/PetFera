@@ -4,7 +4,7 @@
 #endif
 
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 class Tratador : public Funcionario{
@@ -17,4 +17,6 @@ class Tratador : public Funcionario{
 		//gets e sets
 		void setM_nivel_seguranca(string value);
 		string getM_nivel_seguranca();
+
+		string mysql_insert(string nome_tabela);
 };

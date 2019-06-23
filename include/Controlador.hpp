@@ -93,4 +93,13 @@ string tagConsulta(string tabela);
 //Consultar por vet ou tratador
 
 void consultarPor_Vet_Tra();
+
+//_______________________________________
+//Cadastrar Funcionario
+
+void cadastrarFuncionario();
+
+template <typename T>
+void receberValoresFuncionario(T* funcionario);
+
 #endif

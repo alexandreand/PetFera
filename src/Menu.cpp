@@ -4,7 +4,7 @@ int menu()
 {
 	int escolha = 0;
 
-	cout<<"1 - Cadastro\n2 - Remoção\n3 - Alteração\n4 - Consulta\n5 - Consulta de animais de um Vet ou Tra"<<endl<<": ";
+	cout<<"1 - Cadastro\n2 - Remoção\n3 - Alteração\n4 - Consulta\n5 - Consulta de animais de um Vet ou Tra\n6 - Cadastrar Funcionário"<<endl<<"-> ";
 
 	cin>>escolha;
 	switch(escolha)
@@ -29,8 +29,8 @@ int menu()
 			consultarPor_Vet_Tra();
 			break;
 
-		case 6://
-
+		case 6://Cadastrar Funcionario
+			cadastrarFuncionario();
 			break;
 		default:
 			cout<<"Errado"<<endl;

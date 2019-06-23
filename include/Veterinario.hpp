@@ -4,7 +4,7 @@
 #endif
 
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 class Veterinario : public Funcionario{
@@ -17,4 +17,6 @@ class Veterinario : public Funcionario{
 		//gets e sets
 		void setM_crmv(string value);
 		string getM_crmv();
+
+		string mysql_insert(string nome_tabela);
 };
