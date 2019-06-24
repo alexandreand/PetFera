@@ -102,6 +102,10 @@ void receberValoresFuncionario(T* funcionario);
 
 //_______________________________________
 //Remover Funcioanrio
+
 void removerFuncionario();
+
+//_______________________________________
+//...
 
 #endif

@@ -32,9 +32,11 @@ int menu()
 		case 6://Cadastrar Funcionario
 			cadastrarFuncionario();
 			break;
+
 		case 7://Remover Funcionário
 			removerFuncionario();
 			break;
+			
 		default:
 			cout<<"Errado"<<endl;
 

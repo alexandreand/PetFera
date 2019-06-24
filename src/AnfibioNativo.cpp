@@ -62,15 +62,15 @@ string AnfibioNativo::mysql_insert(string nome_tabela)
 						 +	"autorizacao, "
 						 +	"autorização_ibama"
 						 +	") VALUES("
-						 +	getM_nome_cientifico() + ", "
-						 +	getM_classe() + ", "
-						 +	getM_sexo() + ", "
-						 +	getM_dieta() + ", "
-						 +	getM_nome_batismo() + ", "
+						 +	"'" + getM_nome_cientifico() + "'" + ", "
+						 +	"'" + getM_classe() + "'" + ", "
+						 +	"'" + getM_sexo() + "'" + ", "
+						 +	"'" + getM_dieta() + "'" + ", "
+						 +	"'" + getM_nome_batismo() + "'" + ", "
 						 +	total_mudas  + ", "
-						 +	getM_uf_origem() + ", "
-						 +	getM_autorizacao() + ", "
-						 +	getM_autorizacao_ibama()
+						 +	"'" + getM_uf_origem() + "'" + ", "
+						 +	"'" + getM_autorizacao() + "'" + ", "
+						 +	"'" + getM_autorizacao_ibama() + "'"
 						 +	");";
 	return cmd;
 }

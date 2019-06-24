@@ -54,15 +54,15 @@ string ReptilExotico::mysql_insert(string nome_tabela)
 						 +	"pais_origem,"
 						 +	"autorização_ibama"
 						 +	") VALUES("
-						 +	getM_nome_cientifico() + ", "
-						 +	getM_classe() + ", "
-						 +	getM_sexo() + ", "
-						 +	getM_dieta() + ", "
-						 +	getM_nome_batismo() + ", "
-						 +	getM_tipo_veneno() + ", "
+						 +	"'" + getM_nome_cientifico() + "'" + ", "
+						 +	"'" + getM_classe() + "'" + ", "
+						 +	"'" + getM_sexo() + "'" + ", "
+						 +	"'" + getM_dieta() + "'" + ", "
+						 +	"'" + getM_nome_batismo() + "'" + ", "
+						 +	"'" + getM_tipo_veneno() + "'" + ", "
 						 +	venenoso  + ", "
-						 +	getM_pais_origem() + ", "
-						 +	getM_autorizacao_ibama()
+						 +	"'" + getM_pais_origem() + "'" + ", "
+						 +	"'" + getM_autorizacao_ibama() + "'"
 						 +	");";
 	return cmd;
 }

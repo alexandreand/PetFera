@@ -13,12 +13,11 @@ void controlar()
 
 void cadastroAnimal()
 {
-	int result = classeAnimal();
-	cout<<result<<endl;
-	string tabela = identificador(result);
-	cout<<"tabela: "<<tabela<<endl;
-	receberValores(tabela);
-	
+	while(1){
+		string tabela = identificador(classeAnimal());
+		cout<<"tabela: "<<tabela<<endl;
+		receberValores(tabela);
+	}
 }
 
 int classeAnimal()
@@ -56,7 +55,6 @@ void receberValoresAnimal(T* animal)
 	//Tratador
 	animal->setM_nome_batismo("Garfield");
 
-	//cout<<animal->getM_nome_batismo()<<endl;
 }
 
 void receberValores(string value)
@@ -68,7 +66,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_exo);
 		receberValoresExotico(anf_exo);
 
-		cout<<anf_exo->mysql_insert("teste")<<endl;
+		cout<<anf_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("ave_exotico") == 0)
 	{
@@ -78,7 +76,7 @@ void receberValores(string value)
 		receberValoresAve(ave_exo);
 		receberValoresExotico(ave_exo);
 
-		cout<<ave_exo->mysql_insert("teste")<<endl;
+		cout<<ave_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("mamifero_exotico") == 0)
 	{
@@ -87,7 +85,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_exo);
 		receberValoresExotico(mam_exo);
 
-		cout<<mam_exo->mysql_insert("teste")<<endl;
+		cout<<mam_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("reptil_exotico") == 0)
 	{
@@ -96,7 +94,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_exo);
 		receberValoresExotico(rep_exo);
 
-		cout<<rep_exo->mysql_insert("teste")<<endl;//flag
+		cout<<rep_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("anfibio_nativo") == 0)
 	{
@@ -105,7 +103,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_nat);
 		receberValoresNativo(anf_nat);
 
-		cout<<anf_nat->mysql_insert("teste")<<endl;//flag
+		cout<<anf_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("ave_nativo") == 0)
 	{
@@ -114,7 +112,7 @@ void receberValores(string value)
 		receberValoresAve(ave_nat);
 		receberValoresNativo(ave_nat);
 
-		cout<<ave_nat->mysql_insert("teste")<<endl;//flag
+		cout<<ave_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("mamifero_nativo") == 0)
 	{
@@ -123,7 +121,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_nat);
 		receberValoresNativo(mam_nat);
 
-		cout<<mam_nat->mysql_insert("teste")<<endl;//flag
+		cout<<mam_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("reptil_nativo") == 0)
 	{
@@ -132,7 +130,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_nat);
 		receberValoresNativo(rep_nat);
 
-		cout<<rep_nat->mysql_insert("teste")<<endl;//flag
+		cout<<rep_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
 	}
 }
 
@@ -196,7 +194,6 @@ template <typename T>
 void receberValoresAnfibio(T* anfibio)
 {
 	anfibio->setM_total_mudas(2);
-	//anfibio->setM_ultima_muda();
 }
 
 template <typename T>
@@ -222,10 +219,8 @@ void receberValoresReptil(T* reptil)
 template <typename T>
 void receberValoresExotico(T* ptr)
 {
-	//cout<<"template Exotico: "<<ptr->getM_nome_batismo()<<endl;
 	ptr->setM_pais_origem("Brazil");
 	ptr->setM_autorizacao_ibama("pode levar");
-	//cout<<ptr->getM_pais_origem()<<endl;
 }
 template <typename T>
 void receberValoresNativo(T* ptr)
@@ -233,7 +228,6 @@ void receberValoresNativo(T* ptr)
 	ptr->setM_uf_origem("Sei la");
 	ptr->setM_autorizacao("deixa");
 	ptr->setM_autorizacao_ibama("leva");
-	//cout<<"template Nativo: "<<ptr->getM_nome_batismo()<<endl;
 }
 
 //______________________________________________
@@ -280,6 +274,7 @@ string tagRemocao(string nome_tabela, string id_animal)
 	return cmd;
 }
 
+//PRECISA SER TERMINADA
 int verificarExistenciabyID(string tabela, string id)
 {
 	string cmd;
@@ -590,7 +585,7 @@ void consultar()
 		}
 	}else if (escolha == 2)
 	{
-		string tag = tagConsulta(identificador(classeAnimal()));
+		string tag = tagConsulta(identificador(classeAnimal()));//tag usada pra a função mysql_query
 	}else if (escolha == 3)
 	{
 		tagConsulta("anfibio_exotico");
@@ -676,7 +671,8 @@ void cadastrarFuncionario()
 
 		vet->setM_crmv("oq é isso?");
 
-		cout<<vet->mysql_insert("veterianario")<<endl;
+		cout<<vet->mysql_insert("veterianario")<<endl;//tag usada pra a função mysql_query
+
 	}else if (escolha == 2)
 	{
 		Tratador* trat = new Tratador();
@@ -685,7 +681,7 @@ void cadastrarFuncionario()
 
 		trat->setM_nivel_seguranca("Alto");
 
-		cout<<trat->mysql_insert("tratador")<<endl;
+		cout<<trat->mysql_insert("tratador")<<endl;//tag usada pra a função mysql_query
 		
 	}else
 	{
@@ -725,6 +721,10 @@ void removerFuncionario()
 			{
 				cout<<"Nenhum Veterinário encontrado"<<endl;
 			}
+			else
+			{
+				tagRemocao("veterinario", id_pessoa);//tag usada pra a função mysql_query
+			}
 		}
 	}else if (escolha == 2)
 	{
@@ -736,6 +736,10 @@ void removerFuncionario()
 			if (validadeID == 0)
 			{
 				cout<<"Nenhum Tratador encontrado"<<endl;
+			}
+			else
+			{
+				tagRemocao("tratador", id_pessoa);//tag usada pra a função mysql_query
 			}
 		}
 	}else

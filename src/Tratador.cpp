@@ -45,13 +45,13 @@ string Tratador::mysql_insert(string nome_tabela)
 						 + "fator_rh, "
 						 + "nivel_seguranca"
 						 + ") VALUES("
-						 + getM_nome() + ", "
-						 + getM_cpf() + ", "
-						 + getM_especialidade() + ", "
+						 + "'" + getM_nome() + "'" + ", "
+						 + "'" + getM_cpf() + "'" + ", "
+						 + "'" + getM_especialidade() + "'" + ", "
 						 + idade + ", "
-						 + tipo_sanguineo + ", "
-						 + getM_fator_rh() + ", "
-						 + getM_nivel_seguranca()
+						 + "'" + tipo_sanguineo + "'" + ", "
+						 + "'" + getM_fator_rh() + "'" + ", "
+						 + "'" + getM_nivel_seguranca()+ "'"
 						 + ");";
 	return cmd;
 }
