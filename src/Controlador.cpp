@@ -252,15 +252,20 @@ void remocaoAnimal()
 		cout<<"Digite o Id do Animal: ";
 		cin>>id_animal;
 
-		validadeID = verificarExistenciaAnimalbyID(tabela, id_animal);
+		validadeID = verificarExistenciabyID(tabela, id_animal);
 		break;
 		if(validadeID == 0)
 		{
 			cout<<"Nada encontrado"<<endl;
 		}
-	}
+		else
+		{
+		
+			string tag = tagRemocao(tabela, id_animal);//tag usada pra a função mysql_query
+		
 
-	string tag = tagRemocao(tabela, id_animal);//tag usada pra a função mysql_query
+		}
+	}
 }
 
 string tagRemocao(string nome_tabela, string id_animal)
@@ -275,21 +280,11 @@ string tagRemocao(string nome_tabela, string id_animal)
 	return cmd;
 }
 
-int verificarExistenciaAnimalbyID(string tabela, string id)
+int verificarExistenciabyID(string tabela, string id)
 {
 	string cmd;
 
 	cmd = "SELECT * FROM "+ tabela +" WHERE ID="+id+";";
-
-	cout << cmd <<endl;//flag
-	return 0;
-}
-
-int verificarExistenciaPessoabyID(string tabela, string id)
-{
-	string cmd;
-
-	cmd = "SELECT * FROM " + tabela + " WHERE ID=" + id + ";";
 
 	cout << cmd <<endl;//flag
 	return 0;
@@ -310,7 +305,7 @@ void alteracaoAnimal()
 		cout<<"Digite o Id do Animal: ";
 		cin>>id_animal;
 
-		validadeID = verificarExistenciaAnimalbyID(tabela, id_animal);
+		validadeID = verificarExistenciabyID(tabela, id_animal);
 		break;
 		if(validadeID == 0)
 		{
@@ -638,7 +633,7 @@ void consultarPor_Vet_Tra()
 		while(validadeID != 1){
 			cout<<"Informe o ID do veterinário: ";
 			cin>>id_pessoa;
-			validadeID = verificarExistenciaPessoabyID("veterinario", id_pessoa);
+			validadeID = verificarExistenciabyID("veterinario", id_pessoa);
 			break;
 			if (validadeID == 0)
 			{
@@ -650,7 +645,7 @@ void consultarPor_Vet_Tra()
 		while(validadeID != 1){
 			cout<<"Informe o ID do tratador: ";
 			cin>>id_pessoa;
-			validadeID = verificarExistenciaPessoabyID("tratador", id_pessoa);
+			validadeID = verificarExistenciabyID("tratador", id_pessoa);
 			break;
 			if (validadeID == 0)
 			{
@@ -707,4 +702,44 @@ void receberValoresFuncionario(T* funcionario)
 	funcionario->setM_idade(30);
 	funcionario->setM_tipo_sanguineo(2);
 	funcionario->setM_fator_rh('a');
+}
+
+//______________________________________________
+//Remover Funcioanrio
+
+void removerFuncionario()
+{
+	int escolha, validadeID;
+	string id_pessoa;
+
+	cout<<"1 - Veterinário\n2 - Tratador"<<endl;
+	cin>>escolha;
+	if (escolha == 1)
+	{
+		while(validadeID != 1){
+			cout<<"Informe o ID do veterinário: ";
+			cin>>id_pessoa;
+			validadeID = verificarExistenciabyID("veterinario", id_pessoa);
+			break;
+			if (validadeID == 0)
+			{
+				cout<<"Nenhum Veterinário encontrado"<<endl;
+			}
+		}
+	}else if (escolha == 2)
+	{
+		while(validadeID != 1){
+			cout<<"Informe o ID do tratador: ";
+			cin>>id_pessoa;
+			validadeID = verificarExistenciabyID("tratador", id_pessoa);
+			break;
+			if (validadeID == 0)
+			{
+				cout<<"Nenhum Tratador encontrado"<<endl;
+			}
+		}
+	}else
+	{
+		cout<<"Opção invalida"<<endl;
+	}
 }

@@ -64,9 +64,7 @@ void remocaoAnimal();
 
 string tagRemocao(string nome_tabela, string id_animal);
 
-int verificarExistenciaAnimalbyID(string tabela, string id);//0 - Nada encontrado, 1 - Algo encontrado
-
-int verificarExistenciaPessoabyID(string tabela, string id);//0 - Nada encontrado, 1 - Algo encontrado
+int verificarExistenciabyID(string tabela, string id);//0 - Nada encontrado, 1 - Algo encontrado
 //_______________________________________
 //Alteração
 void alteracaoAnimal();
@@ -101,5 +99,9 @@ void cadastrarFuncionario();
 
 template <typename T>
 void receberValoresFuncionario(T* funcionario);
+
+//_______________________________________
+//Remover Funcioanrio
+void removerFuncionario();
 
 #endif
