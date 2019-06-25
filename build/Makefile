@@ -4,7 +4,7 @@ obj = Animal.o Funcionario.o Tratador.o Veterinario.o Anfibio.o Ave.o Mamifero.o
 all: $(obj) main
 
 main: main.cpp
-	$(CC) $(C_FLAGS) main.cpp $(obj) -o main
+	$(CC)  main.cpp $(obj) -o main
 
 Animal.o: ../include/Animal.hpp ../src/Animal.cpp
 	$(CC) ../src/Animal.cpp -c
@@ -59,6 +59,9 @@ Controlador.o: ../src/Controlador.cpp ../include/Controlador.hpp
 
 Menu.o: ../src/Menu.cpp ../include/Menu.hpp
 	$(CC) ../src/Menu.cpp -c
+
+teste: Funcionario.o Tratador.o 
+	$(CC) -std=c++11 ../src/main.cpp Funcionario.o Tratador.o -rdynamic -L/usr/lib64/mysql -lmysqlclient -lz -lcrypt -lnsl -lm 
 
 clear:
 	rm *.o

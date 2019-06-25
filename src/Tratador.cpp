@@ -11,7 +11,7 @@ Tratador::Tratador(string nivel_seguranca){
 }
 
 Tratador::~Tratador(){
-	delete &(this->m_nivel_seguranca);
+	
 }
 //gets e sets
 void Tratador::setM_nivel_seguranca(string value){

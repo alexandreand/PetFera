@@ -10,39 +10,41 @@
 
 class tratador_dao{
 private:
-	MYSQL * conexao;
+	MYSQL conexao;
 public:
 	void save(Tratador t){
 		string sql = "INSERT INTO tratador(nome, cpf, especialidade, idade, tipo_sanguineo, fator_rh, nivel_seguranca)  values(";
-		sql += "\'"; sql += t.getM_nome();sql += "\',";
-		sql += "\'"; sql += t.getM_cpf();sql += "\',";
-		sql += "\'"; sql += t.getM_especialidade();sql += "\',";
-		sql += t.getM_idade();sql += ",";
-		sql += t.getM_tipo_sanguineo();sql += ",";
-		sql += "\'"; sql += t.getM_fator_rh();sql += "\',";
-		sql += "\'"; sql += t.getM_nivel_seguranca();sql += "\');";
+		sql += "\""; sql += t.getM_nome();            sql += "\",";
+		sql += "\""; sql += t.getM_cpf();             sql += "\",";
+		sql += "\""; sql += t.getM_especialidade();   sql += "\",";
+					 sql += t.getM_idade();           sql += ","; 
+			         sql += t.getM_tipo_sanguineo();  sql += ",";
+		sql += "\""; sql += t.getM_fator_rh();        sql += "\",";
+		sql += "\""; sql += t.getM_nivel_seguranca(); sql += "\");";
+		
+		
 
-		int res = mysql_query(conexao, sql.c_str());
+		int res = mysql_query(&conexao, sql.c_str());
 		if (res == 0){
 			cout<<"Dados Inseridos"<<endl;
 		}else{
-			cout<<"Erro na inserção de dados "<<mysql_errno(conexao)<<" : "<<mysql_error(conexao)<<endl;
+			cout<<"Erro na inserção de dados "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<endl;
 		}
 	}
 
 	void remove(int id){
 		auto s = std::to_string(id);
 		string t = "DELETE FROM tratador WHERE id=";
-		int res = mysql_query(conexao, (t+s).c_str());
+		int res = mysql_query(&conexao, (t+s).c_str());
 		if (res == 0){
 			cout<<"Dados removidos"<<endl;
 		}else{
-			cout<<"Erro na remoção de dados "<<mysql_errno(conexao)<<" : "<<mysql_error(conexao)<<endl;
+			cout<<"Erro na remoção de dados "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<endl;
 		}
 	}
 
 	void list(){
-		if (mysql_query(conexao, "SELECT * FROM tratador"));
+		if (mysql_query(&conexao, "SELECT * FROM tratador"));
 		{
 			cout<<"Erro SELECT"<<endl;
 			//return -1;
@@ -50,7 +52,7 @@ public:
 		
 		MYSQL_FIELD *campos;
 		MYSQL_ROW linhas;
-		MYSQL_RES * resp = mysql_store_result(conexao);
+		MYSQL_RES * resp = mysql_store_result(&conexao);
 		
 		//mostrar cabeçalho
 		campos = mysql_fetch_fields(resp);
@@ -74,23 +76,16 @@ public:
 	}
 
 	tratador_dao(){
-		mysql_init(conexao);
-		if (mysql_real_connect(conexao, "localhost", "root", "djongador", "petfera", 0, NULL, 0) )
+		mysql_init(&conexao);
+		if (mysql_real_connect(&conexao, "localhost", "root", "djongador", "petfera", 0, NULL, 0) )
 		{
 			cout<<"conectado com sucesso!"<<endl;
 		}	
 		else
 		{
 			cout<<"Falha de conexao"<<endl;
-			cout<<"Erro "<<mysql_errno(conexao)<<" : "<<mysql_error(conexao)<<endl;
-			mysql_close(conexao);
+			cout<<"Erro "<<mysql_errno(&conexao)<<" : "<<mysql_error(&conexao)<<endl;
+			mysql_close(&conexao);
 		} 
 	}
 };
-
-int main(int argc, char const *argv[]){
-	tratador_dao dao{};
-	//dao.save();
-	dao.list();
-	return 0;
-}
