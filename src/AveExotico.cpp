@@ -60,6 +60,8 @@ string AveExotico::mysql_insert(string nome_tabela)
 						 +	"'" + getM_classe() + "'" + ", "
 						 +	"'" + getM_sexo() + "'" + ", "
 						 +	"'" + getM_dieta() + "'" + ", "
+						 +	getM_id_veterinario() + ", "
+						 +	getM_id_tratador() + ", "
 						 +	"'" + getM_nome_batismo() + "'" + ", "
 						 +	tam_bico  + ", "
 						 +	env_asas  + ", "

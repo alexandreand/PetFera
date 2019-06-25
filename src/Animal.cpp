@@ -41,21 +41,21 @@ string Animal::getM_dieta()
 {
 	return this->m_dieta;
 }
-void Animal::setM_veterinario(Veterinario v)
+void Animal::setM_id_veterinario(string value)
 {
-	this->m_veterinario = v;
+	this->m_id_veterinario = value;
 }
-Veterinario Animal::getM_veterinario()
+string Animal::getM_id_veterinario()
 {
-	return this->m_veterinario;
+	return this->m_id_veterinario;
 }
-void Animal::setM_tratador(Tratador t)
+void Animal::setM_id_tratador(string value)
 {
-	this->m_tratador = t;
+	this->m_id_tratador = value;
 }
-Tratador Animal::getM_tratador()
+string Animal::getM_id_tratador()
 {
-	return this->m_tratador;
+	return this->m_id_tratador;
 }
 void Animal::setM_nome_batismo(string value)
 {

@@ -67,6 +67,9 @@ void receberValoresAnimal(T* animal)
 		{
 			cout<<"Nenhum veterinário encontrado"<<endl;
 			break;//retirar
+		}else
+		{
+			animal->setM_id_veterinario(id_pessoa);
 		}
 	}
 	//Tratador
@@ -80,6 +83,10 @@ void receberValoresAnimal(T* animal)
 		{
 			cout<<"Nenhum tratador encontrado"<<endl;
 			break;//retirar
+		}
+		else
+		{
+			animal->setM_id_tratador(id_pessoa);
 		}
 	}
 
