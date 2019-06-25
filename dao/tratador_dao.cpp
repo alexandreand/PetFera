@@ -13,18 +13,18 @@ private:
 	MYSQL conexao;
 public:
 	void save(Tratador t){
-		string sql = "INSERT INTO tratador(nome, cpf, especialidade, idade, tipo_sanguineo, fator_rh, nivel_seguranca)  values(";
+		/*string sql = "INSERT INTO tratador(nome, cpf, especialidade, idade, tipo_sanguineo, fator_rh, nivel_seguranca)  values(";
 		sql += "\""; sql += t.getM_nome();            sql += "\",";
 		sql += "\""; sql += t.getM_cpf();             sql += "\",";
 		sql += "\""; sql += t.getM_especialidade();   sql += "\",";
 					 sql += t.getM_idade();           sql += ","; 
 			         sql += t.getM_tipo_sanguineo();  sql += ",";
 		sql += "\""; sql += t.getM_fator_rh();        sql += "\",";
-		sql += "\""; sql += t.getM_nivel_seguranca(); sql += "\");";
+		sql += "\""; sql += t.getM_nivel_seguranca(); sql += "\");";*/
 		
 		
 
-		int res = mysql_query(&conexao, sql.c_str());
+		int res = mysql_query(&conexao, t.mysql_insert("tratador").c_str());
 		if (res == 0){
 			cout<<"Dados Inseridos"<<endl;
 		}else{

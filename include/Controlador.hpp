@@ -71,7 +71,7 @@ string camposAnimalNativo(int num);
 
 //_______________________________________
 //Consultar
-
+void mostrarTabela(string sql);
 void consultar();
 
 string tagConsulta(string tabela);

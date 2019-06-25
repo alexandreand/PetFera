@@ -1,5 +1,5 @@
-
 #include "../include/Controlador.hpp"
+#include "../mysql/Conexao.cpp"
 
 void cadastroAnimal()
 {
@@ -64,12 +64,10 @@ void receberValoresAnimal(T* animal)
 		cout<<"ID do veterinário: ";
 		cin>>id_pessoa;
 		validadeID = verificarExistenciabyID("veterinario", id_pessoa);
-		if (validadeID == 0)
-		{
+		if (validadeID == 0){
 			cout<<"Nenhum veterinário encontrado"<<endl;
 			break;//retirar
-		}else
-		{
+		}else{
 			animal->setM_id_veterinario(id_pessoa);
 		}
 	}
@@ -356,10 +354,8 @@ int verificarExistenciabyID(string tabela, string id)
 {
 	string cmd;
 
-	cmd = "SELECT * FROM "+ tabela +" WHERE ID="+id+";";
-
-	cout << cmd <<endl;//flag
-	return 0;
+	cmd = "SELECT "+tabela+".id FROM "+ tabela +" WHERE ID="+id+";";
+	return exists_rows(cmd);
 }
 //______________________________________________
 //Alteração de dados de um animal
@@ -395,7 +391,7 @@ void alteracaoAnimal()
 
 string tagAlteracao(string nome_tabela, string id_animal, string campo, string valor)
 {
-	string cmd = "ALTER "+campo+" FOR "+valor+" WHERE ID="+id_animal+";";
+	string cmd = "UPDATE from "+nome_tabela+ " SET " +campo+" = "+valor+" WHERE id="+id_animal+";";
 	return cmd;
 }
 
@@ -623,6 +619,33 @@ string camposAnimalNativo(int num)
 //______________________________________________
 //Consutar
 
+
+void mostrarTabela(string sql){
+	MYSQL_RES * resp = list(sql);	
+	
+	MYSQL_FIELD *campos;
+	MYSQL_ROW linhas;
+		
+	//mostrar cabeçalho
+	campos = mysql_fetch_fields(resp);
+	for (int cont = 0; cont < mysql_num_fields(resp); cont++){
+		cout<<(campos[cont]).name;
+		if (mysql_num_fields(resp)>1){
+			cout<<"\t";
+		}
+	}
+		
+	cout << "\n\n";
+
+	//mostrar dados
+	while((linhas=mysql_fetch_row(resp))!=NULL){
+		for (int cont = 0; cont < mysql_num_fields(resp); cont++){
+			cout<<linhas[cont]<<"\t";
+		}
+		cout<<endl;
+	}	
+}
+
 void consultar()
 {
 	int escolha;
@@ -636,20 +659,20 @@ void consultar()
 		cin>>escolha;
 		if (escolha == 1)
 		{
-			tagConsulta("anfibio_exotico");
-			tagConsulta("anfibio_nativo");
+			mostrarTabela(tagConsulta("anfibio_exotico"));
+			mostrarTabela(tagConsulta("anfibio_nativo"));
 		}else if (escolha == 2)
 		{
-			tagConsulta("ave_exotico");
-			tagConsulta("ave_nativo");
+			mostrarTabela(tagConsulta("ave_exotico"));
+			mostrarTabela(tagConsulta("ave_nativo"));
 		}else if (escolha == 3)
 		{
-			tagConsulta("mamifero_exotico");
-			tagConsulta("mamifero_nativo");
+			mostrarTabela(tagConsulta("mamifero_exotico"));
+			mostrarTabela(tagConsulta("mamifero_nativo"));
 		}else if (escolha == 4)
 		{
-			tagConsulta("reptil_exotico");
-			tagConsulta("reptil_nativo");
+			mostrarTabela(tagConsulta("reptil_exotico"));
+			mostrarTabela(tagConsulta("reptil_nativo"));
 		}else
 		{
 			cout<<"Escolha invalida"<<endl;
@@ -659,14 +682,14 @@ void consultar()
 		string tag = tagConsulta(identificador(classeAnimal()));//tag usada pra a função mysql_query
 	}else if (escolha == 3)
 	{
-		tagConsulta("anfibio_exotico");//tag usada pra a função mysql_query
-		tagConsulta("anfibio_nativo");//tag usada pra a função mysql_query
-		tagConsulta("ave_exotico");//tag usada pra a função mysql_query
-		tagConsulta("ave_nativo");//tag usada pra a função mysql_query
-		tagConsulta("mamifero_exotico");//tag usada pra a função mysql_query
-		tagConsulta("mamifero_nativo");//tag usada pra a função mysql_query
-		tagConsulta("reptil_exotico");//tag usada pra a função mysql_query
-		tagConsulta("reptil_nativo");//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("anfibio_exotico"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("anfibio_nativo"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("ave_exotico"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("ave_nativo"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("mamifero_exotico"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("mamifero_nativo"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("reptil_exotico"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("reptil_nativo"));//tag usada pra a função mysql_query
 	}
 	else
 	{

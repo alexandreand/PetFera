@@ -4,7 +4,7 @@ obj = Animal.o Funcionario.o Tratador.o Veterinario.o Anfibio.o Ave.o Mamifero.o
 all: $(obj) main
 
 main: main.cpp
-	$(CC)  main.cpp $(obj) -o main
+	$(CC)  main.cpp $(obj) -std=c++11 -rdynamic -L/usr/lib64/mysql -lmysqlclient -lz -lcrypt -lnsl -lm  -o main
 
 Animal.o: ../include/Animal.hpp ../src/Animal.cpp
 	$(CC) ../src/Animal.cpp -c
