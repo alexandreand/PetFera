@@ -1,39 +1,47 @@
-#include "../include/Controlador.hpp"
-//Função de testes
-void controlar()
-{
-	AnfibioExotico* ae1 = new AnfibioExotico;
-	Ave* a1 = new Ave;
-	Tratador* t1 = new Tratador;
-	Funcionario* f1 = new Funcionario;
-	Veterinario* v1 = new Veterinario;
-	Animal* a = new Animal;
-}
+Skip to content
+ 
+Search or jump to…
 
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@joseluan 
+2
+1 0 CalexODE/PetFera
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights
+PetFera/src/Controlador.cpp
+@CalexODE CalexODE veterinario and tratador now they are string in the 'animal' class
+1e11cb1 2 hours ago
+846 lines (724 sloc)  17.8 KB
+  
+#include "../include/Controlador.hpp"
 
 void cadastroAnimal()
 {
-	while(1){
-		string tabela = identificador(classeAnimal());
-		cout<<"tabela: "<<tabela<<endl;
-		receberValores(tabela);
-	}
+	string tabela = identificador(classeAnimal());
+	receberValores(tabela);
 }
 
 int classeAnimal()
 {
 	int escolha = 0;
 	int result;
+
 	cout<<"1 - Anfibio\n2 - Ave\n3 - Mamifero\n4 - Reptil"<<endl;
 	cin>>escolha;
+
 	return tipoAnimal(escolha);
 
 }
 int tipoAnimal(int num)
 {
 	int escolha;
+
 	cout<<"1 - Exótico\n2 - Nativo"<<endl;
 	cin>>escolha;
+
 	switch(escolha)
 	{
 		case 1:
@@ -47,22 +55,61 @@ int tipoAnimal(int num)
 template <typename T>
 void receberValoresAnimal(T* animal)
 {
-	string in;
-	char in2;
-	cout << "Nome Científico: ";
-	cin >> in;
-	animal->setM_nome_cientifico(in);
-	cout << "Classe: ";
-	cin >> in;
-	animal->setM_classe(in);
-	cout << "Sexo (m) masculino, (f) feminino: ";
-	cin >> in2;
-	animal->setM_sexo(in2);
-	cout << "Nome Científico: ";
-	cin >> in;
-	animal->setM_dieta("Come pa crl");
+	string valor, id_pessoa;
+	char sexo;
+	int validadeID;
+
+	cout<<"Nome Científico: ";
+	cin>>valor;
+	animal->setM_nome_cientifico(valor);
+
+	cout<<"Classe: ";
+	cin>>valor;
+	animal->setM_classe(valor);
+
+	cout<<"Sexo:(M ou F) ";
+	cin>>sexo;
+	animal->setM_sexo(sexo);
+
+	cout<<"Dieta: ";
+	cin>>valor;
+	animal->setM_dieta(valor);
+
 	//Veterinario
+	while(validadeID != 1)
+	{
+		cout<<"ID do veterinário: ";
+		cin>>id_pessoa;
+		validadeID = verificarExistenciabyID("veterinario", id_pessoa);
+		if (validadeID == 0)
+		{
+			cout<<"Nenhum veterinário encontrado"<<endl;
+			break;//retirar
+		}else
+		{
+			animal->setM_id_veterinario(id_pessoa);
+		}
+	}
 	//Tratador
+	validadeID = 0;
+	while(validadeID != 1)
+	{
+		cout<<"ID do tratador: ";
+		cin>>id_pessoa;
+		validadeID = verificarExistenciabyID("tratador", id_pessoa);
+		if (validadeID == 0)
+		{
+			cout<<"Nenhum tratador encontrado"<<endl;
+			break;//retirar
+		}
+		else
+		{
+			animal->setM_id_tratador(id_pessoa);
+		}
+	}
+
+	cout<<"Nome de batismo: ";
+	cin>>valor;
 	animal->setM_nome_batismo("Garfield");
 
 }
@@ -203,41 +250,81 @@ string identificador(int num)
 template <typename T>
 void receberValoresAnfibio(T* anfibio)
 {
-	anfibio->setM_total_mudas(2);
+	int total_mudas;
+
+	cout<<"Total de mudas: ";
+	cin>>total_mudas;
+	anfibio->setM_total_mudas(total_mudas);
 }
 
 template <typename T>
 void receberValoresAve(T* ave)
 {
-	ave->setM_tam_bico(12.32);
-	ave->setM_env_asas(32.2);
+	double valor;
+
+	cout<<"Tamanho do bico: ";
+	cin>>valor;
+	ave->setM_tam_bico(valor);
+
+	cout<<"Envergadura da asa: ";
+	cin>>valor;
+	ave->setM_env_asas(valor);
 }
 
 template <typename T>
 void receberValoresMamifero(T* mamifero)
 {
-	mamifero->setM_cor_pelo("vermelha");
+	string cor_pelo;
+
+	cout<<"Cor do pelo: ";
+	cin>>cor_pelo;
+	mamifero->setM_cor_pelo(cor_pelo);
 }
 
 template <typename T>
 void receberValoresReptil(T* reptil)
 {
-	reptil->setM_venenoso(1);
-	reptil->setM_tipo_veneno("de morrer");
+	int venenoso;
+	string tipo_veneno;
+
+	cout<<"Venenoso: (1 - Sim; 2 - Não) ";
+	cin>>venenoso;
+	reptil->setM_venenoso(venenoso);
+
+	cout<<"Tipo do veneno: ";
+	cin>>tipo_veneno;
+	reptil->setM_tipo_veneno(tipo_veneno);
 }
 
 template <typename T>
 void receberValoresExotico(T* ptr)
 {
-	ptr->setM_pais_origem("Brazil");
-	ptr->setM_autorizacao_ibama("pode levar");
+	string valor;
+
+	cout<<"Pais de origem: ";
+	cin>>valor;
+	ptr->setM_pais_origem(valor);
+
+	cout<<"Autorização do ibama: ";
+	cin>>valor;
+	ptr->setM_autorizacao_ibama(valor);
 }
 template <typename T>
 void receberValoresNativo(T* ptr)
 {
-	ptr->setM_uf_origem("Sei la");
-	ptr->setM_autorizacao("deixa");
-	ptr->setM_autorizacao_ibama("leva");
+	string valor;
+
+	cout<<"UF de origem: ";
+	cin>>valor;
+	ptr->setM_uf_origem(valor);
+
+	cout<<"Autorização: ";
+	cin>>valor;
+	ptr->setM_autorizacao(valor);
+
+	cout<<"Autorização do ibama: ";
+	cin>>valor;
+	ptr->setM_autorizacao_ibama(valor);
 }
 
 //______________________________________________
@@ -264,10 +351,7 @@ void remocaoAnimal()
 		}
 		else
 		{
-		
 			string tag = tagRemocao(tabela, id_animal);//tag usada pra a função mysql_query
-		
-
 		}
 	}
 }
@@ -301,10 +385,9 @@ void alteracaoAnimal()
 {
 	string tabela, campo, novo_valor, id_animal;
 	int validadeID;
-	//escolher classe e tipo
+
 	tabela = identificador(classeAnimal());
 
-	//receber e verificar existencia do id
 	while(validadeID != 1)
 	{
 		cout<<"Digite o Id do Animal: ";
@@ -318,17 +401,12 @@ void alteracaoAnimal()
 		}
 	}
 
-	//campo
 	campo = identificarCampo(tabela);
 
-	//Novo valor
 	cout<<"Novo Valor: ";
 	cin>>novo_valor;
-	cout<<"campo: "<<campo<<endl;
 
-	string tag = tagAlteracao(tabela, id_animal, campo, novo_valor);
-
-	cout<<tag<<endl;
+	string tag = tagAlteracao(tabela, id_animal, campo, novo_valor);//tag usada pra a função mysql_query
 }
 
 
@@ -567,7 +645,7 @@ void consultar()
 	int escolha;
 
 	while(1){
-	cout<<"1 - Por classe\n2 - Por Classe e tipo\n3 - Todos os Animais cadastrados\n4 - por ID"<<endl;
+	cout<<"1 - Por classe\n2 - Por Classe e tipo\n3 - Todos os Animais cadastrados\n"<<endl;
 	cin>>escolha;
 	if (escolha == 1)
 	{
@@ -598,14 +676,14 @@ void consultar()
 		string tag = tagConsulta(identificador(classeAnimal()));//tag usada pra a função mysql_query
 	}else if (escolha == 3)
 	{
-		tagConsulta("anfibio_exotico");
-		tagConsulta("anfibio_nativo");
-		tagConsulta("ave_exotico");
-		tagConsulta("ave_nativo");
-		tagConsulta("mamifero_exotico");
-		tagConsulta("mamifero_nativo");
-		tagConsulta("reptil_exotico");
-		tagConsulta("reptil_nativo");
+		tagConsulta("anfibio_exotico");//tag usada pra a função mysql_query
+		tagConsulta("anfibio_nativo");//tag usada pra a função mysql_query
+		tagConsulta("ave_exotico");//tag usada pra a função mysql_query
+		tagConsulta("ave_nativo");//tag usada pra a função mysql_query
+		tagConsulta("mamifero_exotico");//tag usada pra a função mysql_query
+		tagConsulta("mamifero_nativo");//tag usada pra a função mysql_query
+		tagConsulta("reptil_exotico");//tag usada pra a função mysql_query
+		tagConsulta("reptil_nativo");//tag usada pra a função mysql_query
 	}
 	else
 	{
@@ -676,20 +754,26 @@ void cadastrarFuncionario()
 	if (escolha == 1)
 	{
 		Veterinario* vet = new Veterinario();
+		string valor;
 
 		receberValoresFuncionario(vet);
 
-		vet->setM_crmv("oq é isso?");
+		cout<<"CRMV: ";
+		cin>>valor;
+		vet->setM_crmv(valor);
 
 		cout<<vet->mysql_insert("veterianario")<<endl;//tag usada pra a função mysql_query
 
 	}else if (escolha == 2)
 	{
 		Tratador* trat = new Tratador();
+		string valor;
 
 		receberValoresFuncionario(trat);
 
-		trat->setM_nivel_seguranca("Alto");
+		cout<<"Nivel de segurança: ";
+		cin>>valor;
+		trat->setM_nivel_seguranca(valor);
 
 		cout<<trat->mysql_insert("tratador")<<endl;//tag usada pra a função mysql_query
 		
@@ -702,12 +786,33 @@ void cadastrarFuncionario()
 template <typename T>
 void receberValoresFuncionario(T* funcionario)
 {
-	funcionario->setM_nome("Nomedele");
-	funcionario->setM_cpf("123123123");
-	funcionario->setM_especialidade("Faz nada");
-	funcionario->setM_idade(30);
-	funcionario->setM_tipo_sanguineo(2);
-	funcionario->setM_fator_rh('a');
+	short idade, tipo_sanguineo;
+	string valor;
+	char fator_rh;
+
+	cout<<"Nome: ";
+	cin>>valor;
+	funcionario->setM_nome(valor);
+
+	cout<<"CPF: ";
+	cin>>valor;
+	funcionario->setM_cpf(valor);
+
+	cout<<"Especialidade: ";
+	cin>>valor;
+	funcionario->setM_especialidade(valor);
+
+	cout<<"Idade: ";
+	cin>>idade;
+	funcionario->setM_idade(idade);
+
+	cout<<"Tipo sanguineo: ";
+	cin>>tipo_sanguineo;
+	funcionario->setM_tipo_sanguineo(tipo_sanguineo);
+
+	cout<<"Fator RH: ";
+	cin>>fator_rh;
+	funcionario->setM_fator_rh(fator_rh);
 }
 
 //______________________________________________
@@ -757,3 +862,15 @@ void removerFuncionario()
 		cout<<"Opção invalida"<<endl;
 	}
 }
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

@@ -13,8 +13,8 @@ class Animal{
 		char m_sexo;
 		double m_tamanho;
 		string m_dieta;
-		Veterinario m_veterinario;
-		Tratador m_tratador;
+		string m_id_veterinario;
+		string m_id_tratador;
 		string m_nome_batismo;
 
 	public:
@@ -37,11 +37,11 @@ class Animal{
 		void setM_dieta(string value);
 		string getM_dieta();
 
-		void setM_veterinario(Veterinario v);
-		Veterinario getM_veterinario();
+		void setM_id_veterinario(string value);
+		string getM_id_veterinario();
 
-		void setM_tratador(Tratador t);
-		Tratador getM_tratador();
+		void setM_id_tratador(string value);
+		string getM_id_tratador();
 
 		void setM_nome_batismo(string value);
 		string getM_nome_batismo();
