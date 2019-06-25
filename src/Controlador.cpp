@@ -47,9 +47,19 @@ int tipoAnimal(int num)
 template <typename T>
 void receberValoresAnimal(T* animal)
 {
-	animal->setM_nome_cientifico("ghatos");
-	animal->setM_classe("Bichano");
-	animal->setM_sexo('c');
+	string in;
+	char in2;
+	cout << "Nome Científico: ";
+	cin >> in;
+	animal->setM_nome_cientifico(in);
+	cout << "Classe: ";
+	cin >> in;
+	animal->setM_classe(in);
+	cout << "Sexo (m) masculino, (f) feminino: ";
+	cin >> in2;
+	animal->setM_sexo(in2);
+	cout << "Nome Científico: ";
+	cin >> in;
 	animal->setM_dieta("Come pa crl");
 	//Veterinario
 	//Tratador
