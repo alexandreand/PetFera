@@ -4,7 +4,7 @@ int menu()
 {
 	int escolha = 0;
 
-	cout<<"1 - Cadastro\n2 - Remoção\n3 - Alteração\n4 - Consulta\n5 - Consulta de animais de um Vet ou Tra\n6 - Cadastrar Funcionário\n7 - Remover Funcionários"<<endl<<"-> ";
+	cout<<"1 - Cadastro\n2 - Remoção\n3 - Alteração\n4 - Consultar Animal\n5 - Consulta de animais de um Vet ou Tra\n6 - Cadastrar Funcionário\n7 - Remover Funcionários\n8 - Consultar Funcionários"<<endl<<"-> ";
 
 	cin>>escolha;
 	switch(escolha)
@@ -36,7 +36,11 @@ int menu()
 		case 7://Remover Funcionário
 			removerFuncionario();
 			break;
-			
+
+		case 8:
+			consultarFuncionario();
+			break;
+
 		default:
 			cout<<"Errado"<<endl;
 

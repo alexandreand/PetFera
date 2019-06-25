@@ -96,6 +96,8 @@ void receberValoresFuncionario(T* funcionario);
 void removerFuncionario();
 
 //_______________________________________
-//...
+//Consultar Funcionário
+
+void consultarFuncionario();
 
 #endif

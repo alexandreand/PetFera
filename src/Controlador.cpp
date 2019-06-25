@@ -342,10 +342,9 @@ string tagRemocao(string nome_tabela, string id_animal)
 	string cmd;
 
 	cmd = "DELETE FROM " +	nome_tabela
-						 +	" WHERE ID="
+						 +	" WHERE id="
 						 +	id_animal + ";";
 
-	cout<<cmd<<endl;//flag
 	return cmd;
 }
 
@@ -354,7 +353,7 @@ int verificarExistenciabyID(string tabela, string id)
 {
 	string cmd;
 
-	cmd = "SELECT "+tabela+".id FROM "+ tabela +" WHERE ID="+id+";";
+	cmd = "SELECT "+tabela+".id FROM "+ tabela +" WHERE id="+id+";";
 	return exists_rows(cmd);
 }
 //______________________________________________
@@ -867,4 +866,14 @@ void removerFuncionario()
 	{
 		cout<<"Opção invalida"<<endl;
 	}
+}
+
+//______________________________________________
+//Consultar Funcionários
+
+
+void consultarFuncionario()
+{
+	mostrarTabela(tagConsulta("veterinario"));
+	mostrarTabela(tagConsulta("tratador"));
 }
