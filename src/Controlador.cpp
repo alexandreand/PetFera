@@ -1,21 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@joseluan 
-2
-1 0 CalexODE/PetFera
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights
-PetFera/src/Controlador.cpp
-@CalexODE CalexODE veterinario and tratador now they are string in the 'animal' class
-1e11cb1 2 hours ago
-846 lines (724 sloc)  17.8 KB
-  
 #include "../include/Controlador.hpp"
 
 void cadastroAnimal()
@@ -862,15 +845,3 @@ void removerFuncionario()
 		cout<<"Opção invalida"<<endl;
 	}
 }
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
