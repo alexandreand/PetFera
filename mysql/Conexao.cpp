@@ -18,6 +18,16 @@ void conectar(string HOST, string USER, string PASS, string DB, MYSQL * conexao)
 	}
 }
 
+void run(string sql){
+	MYSQL conexao;
+	conectar("locahost", "root", "djogador", "petfera", &conexao);
+	if (mysql_query(&conexao, sql.c_str())){
+		cout<<"Erro: "<<endl;
+		return;
+	}
+
+	mysql_close(&conexao);
+}
 
 int exists_rows(string sql){
 	MYSQL conexao;
