@@ -63,8 +63,12 @@ Menu.o: ../src/Menu.cpp ../include/Menu.hpp
 teste: Funcionario.o Tratador.o 
 	$(CC) -std=c++11 ../src/main.cpp Funcionario.o Tratador.o -rdynamic -L/usr/lib64/mysql -lmysqlclient -lz -lcrypt -lnsl -lm 
 
+exportar: ../src/exportar.cpp
+	$(CC) -std=c++11 ../src/exportar.cpp -rdynamic -L/usr/lib64/mysql -lmysqlclient -lz -lcrypt -lnsl -lm -o exportar
+
 clear:
 	rm *.o
 	rm main
+	rm exportar
 
 

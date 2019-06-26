@@ -104,7 +104,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_exo);
 		receberValoresExotico(anf_exo);
 
-		cout<<anf_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<anf_exo->mysql_insert("anfibio_exotico")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("ave_exotico") == 0)
 	{
@@ -114,7 +114,7 @@ void receberValores(string value)
 		receberValoresAve(ave_exo);
 		receberValoresExotico(ave_exo);
 
-		cout<<ave_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<ave_exo->mysql_insert("ave_exotico")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("mamifero_exotico") == 0)
 	{
@@ -123,7 +123,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_exo);
 		receberValoresExotico(mam_exo);
 
-		cout<<mam_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<mam_exo->mysql_insert("mamifero_exotico")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("reptil_exotico") == 0)
 	{
@@ -132,7 +132,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_exo);
 		receberValoresExotico(rep_exo);
 
-		cout<<rep_exo->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<rep_exo->mysql_insert("reptil_exotico")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("anfibio_nativo") == 0)
 	{
@@ -141,7 +141,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_nat);
 		receberValoresNativo(anf_nat);
 
-		cout<<anf_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<anf_nat->mysql_insert("anfibio_nativo")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("ave_nativo") == 0)
 	{
@@ -150,7 +150,7 @@ void receberValores(string value)
 		receberValoresAve(ave_nat);
 		receberValoresNativo(ave_nat);
 
-		cout<<ave_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<ave_nat->mysql_insert("ave_nativo")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("mamifero_nativo") == 0)
 	{
@@ -159,7 +159,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_nat);
 		receberValoresNativo(mam_nat);
 
-		cout<<mam_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<mam_nat->mysql_insert("mamifero_nativo")<<endl;//tag usada pra a função mysql_query
 
 	}else if (value.compare("reptil_nativo") == 0)
 	{
@@ -168,7 +168,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_nat);
 		receberValoresNativo(rep_nat);
 
-		cout<<rep_nat->mysql_insert("teste")<<endl;//tag usada pra a função mysql_query
+		cout<<rep_nat->mysql_insert("reptil_nativo")<<endl;//tag usada pra a função mysql_query
 	}
 }
 
@@ -337,13 +337,9 @@ void remocaoAnimal()
 	}
 }
 
-string tagRemocao(string nome_tabela, string id_animal)
-{
+string tagRemocao(string nome_tabela, string id_animal){
 	string cmd;
-
-	cmd = "DELETE FROM " +	nome_tabela
-						 +	" WHERE id="
-						 +	id_animal + ";";
+	cmd = "DELETE FROM "+nome_tabela+" WHERE id="+id_animal+";";
 
 	return cmd;
 }
