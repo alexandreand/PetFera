@@ -104,7 +104,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_exo);
 		receberValoresExotico(anf_exo);
 
-		cout<<anf_exo->mysql_insert("anfibio_exotico")<<endl;//tag usada pra a função mysql_query
+		run(anf_exo->mysql_insert("anfibio_exotico"));
 
 	}else if (value.compare("ave_exotico") == 0)
 	{
@@ -114,7 +114,7 @@ void receberValores(string value)
 		receberValoresAve(ave_exo);
 		receberValoresExotico(ave_exo);
 
-		cout<<ave_exo->mysql_insert("ave_exotico")<<endl;//tag usada pra a função mysql_query
+		run(ave_exo->mysql_insert("ave_exotico"));
 
 	}else if (value.compare("mamifero_exotico") == 0)
 	{
@@ -123,7 +123,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_exo);
 		receberValoresExotico(mam_exo);
 
-		cout<<mam_exo->mysql_insert("mamifero_exotico")<<endl;//tag usada pra a função mysql_query
+		run(mam_exo->mysql_insert("mamifero_exotico"));
 
 	}else if (value.compare("reptil_exotico") == 0)
 	{
@@ -132,7 +132,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_exo);
 		receberValoresExotico(rep_exo);
 
-		cout<<rep_exo->mysql_insert("reptil_exotico")<<endl;//tag usada pra a função mysql_query
+		run(rep_exo->mysql_insert("reptil_exotico"));
 
 	}else if (value.compare("anfibio_nativo") == 0)
 	{
@@ -141,7 +141,7 @@ void receberValores(string value)
 		receberValoresAnfibio(anf_nat);
 		receberValoresNativo(anf_nat);
 
-		cout<<anf_nat->mysql_insert("anfibio_nativo")<<endl;//tag usada pra a função mysql_query
+		run(anf_nat->mysql_insert("anfibio_nativo"));
 
 	}else if (value.compare("ave_nativo") == 0)
 	{
@@ -150,7 +150,7 @@ void receberValores(string value)
 		receberValoresAve(ave_nat);
 		receberValoresNativo(ave_nat);
 
-		cout<<ave_nat->mysql_insert("ave_nativo")<<endl;//tag usada pra a função mysql_query
+		run(ave_nat->mysql_insert("ave_nativo"));
 
 	}else if (value.compare("mamifero_nativo") == 0)
 	{
@@ -159,7 +159,7 @@ void receberValores(string value)
 		receberValoresMamifero(mam_nat);
 		receberValoresNativo(mam_nat);
 
-		cout<<mam_nat->mysql_insert("mamifero_nativo")<<endl;//tag usada pra a função mysql_query
+		run(mam_nat->mysql_insert("mamifero_nativo"));
 
 	}else if (value.compare("reptil_nativo") == 0)
 	{
@@ -168,7 +168,7 @@ void receberValores(string value)
 		receberValoresReptil(rep_nat);
 		receberValoresNativo(rep_nat);
 
-		cout<<rep_nat->mysql_insert("reptil_nativo")<<endl;//tag usada pra a função mysql_query
+		run(rep_nat->mysql_insert("reptil_nativo"));
 	}
 }
 
@@ -332,7 +332,8 @@ void remocaoAnimal()
 		}
 		else
 		{
-			string tag = tagRemocao(tabela, id_animal);//tag usada pra a função mysql_query
+			string tag = tagRemocao(tabela, id_animal);
+			run(tag);
 		}
 	}
 }
@@ -368,7 +369,6 @@ void alteracaoAnimal()
 		cin>>id_animal;
 
 		validadeID = verificarExistenciabyID(tabela, id_animal);
-		break;
 		if(validadeID == 0)
 		{
 			cout<<"Nada encontrado"<<endl;
@@ -380,7 +380,8 @@ void alteracaoAnimal()
 	cout<<"Novo Valor: ";
 	cin>>novo_valor;
 
-	string tag = tagAlteracao(tabela, id_animal, campo, novo_valor);//tag usada pra a função mysql_query
+	string tag = tagAlteracao(tabela, id_animal, campo, novo_valor);
+	run(tag);
 }
 
 
@@ -674,17 +675,18 @@ void consultar()
 		}
 	}else if (escolha == 2)
 	{
-		string tag = tagConsulta(identificador(classeAnimal()));//tag usada pra a função mysql_query
+		string tag = tagConsulta(identificador(classeAnimal()));
+		mostrarTabela(tag);
 	}else if (escolha == 3)
 	{
-		mostrarTabela(tagConsulta("anfibio_exotico"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("anfibio_nativo"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("ave_exotico"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("ave_nativo"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("mamifero_exotico"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("mamifero_nativo"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("reptil_exotico"));//tag usada pra a função mysql_query
-		mostrarTabela(tagConsulta("reptil_nativo"));//tag usada pra a função mysql_query
+		mostrarTabela(tagConsulta("anfibio_exotico"));
+		mostrarTabela(tagConsulta("anfibio_nativo"));
+		mostrarTabela(tagConsulta("ave_exotico"));
+		mostrarTabela(tagConsulta("ave_nativo"));
+		mostrarTabela(tagConsulta("mamifero_exotico"));
+		mostrarTabela(tagConsulta("mamifero_nativo"));
+		mostrarTabela(tagConsulta("reptil_exotico"));
+		mostrarTabela(tagConsulta("reptil_nativo"));
 	}
 	else
 	{
@@ -698,7 +700,6 @@ string tagConsulta(string tabela)
 {
 	string cmd = "SELECT * FROM "+tabela+";";
 
-	cout<<cmd<<endl;
 	return cmd;
 }
 
@@ -718,7 +719,6 @@ void consultarPor_Vet_Tra()
 			cout<<"Informe o ID do veterinário: ";
 			cin>>id_pessoa;
 			validadeID = verificarExistenciabyID("veterinario", id_pessoa);
-			break;
 			if (validadeID == 0)
 			{
 				cout<<"Nenhum Veterinário encontrado"<<endl;
@@ -730,7 +730,6 @@ void consultarPor_Vet_Tra()
 			cout<<"Informe o ID do tratador: ";
 			cin>>id_pessoa;
 			validadeID = verificarExistenciabyID("tratador", id_pessoa);
-			break;
 			if (validadeID == 0)
 			{
 				cout<<"Nenhum Tratador encontrado"<<endl;
@@ -763,7 +762,7 @@ void cadastrarFuncionario()
 		cin>>valor;
 		vet->setM_crmv(valor);
 
-		cout<<vet->mysql_insert("veterianario")<<endl;//tag usada pra a função mysql_query
+		run(vet->mysql_insert("veterianario"));
 
 	}else if (escolha == 2)
 	{
@@ -776,7 +775,7 @@ void cadastrarFuncionario()
 		cin>>valor;
 		trat->setM_nivel_seguranca(valor);
 
-		cout<<trat->mysql_insert("tratador")<<endl;//tag usada pra a função mysql_query
+		run(trat->mysql_insert("tratador"));
 		
 	}else
 	{
@@ -839,7 +838,8 @@ void removerFuncionario()
 			}
 			else
 			{
-				tagRemocao("veterinario", id_pessoa);//tag usada pra a função mysql_query
+				run(tagRemocao("veterinario", id_pessoa));
+
 			}
 		}
 	}else if (escolha == 2)
@@ -855,7 +855,7 @@ void removerFuncionario()
 			}
 			else
 			{
-				tagRemocao("tratador", id_pessoa);//tag usada pra a função mysql_query
+				run(tagRemocao("tratador", id_pessoa));
 			}
 		}
 	}else
